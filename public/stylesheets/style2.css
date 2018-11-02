@@ -1,0 +1,42 @@
+.carousel-inner > .item{
+    height: 90vh;
+}
+
+.b1{
+    background-image: url('../images/b1.jpg');
+}
+
+.b2{
+    background-image: url('../images/b5.jpg');
+}
+
+.b3{
+    background-image: url('../images/b6.jpg');
+}
+
+.b1, .b2, .b3{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.he1{
+    font-size: 2.5em;
+    padding-top: 7em;
+    padding-right: 2em;
+    color: white;
+}
+
+.he2{
+    font-size: 3em;
+    padding-top: 3em;
+    color: white;
+}
+
+.he3{
+    font-size: 3em;
+    padding-top: 5em;
+    padding-left: 3em;
+    color: white;
+}
+
