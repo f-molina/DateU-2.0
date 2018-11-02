@@ -1,0 +1,27 @@
+body{
+    background: linear-gradient(to left, #7b4397, #dc2430);
+    margin: 0;
+  }
+  
+  header.main {
+    position: relative;
+    width: 100%;
+    padding-top: 9em;
+    padding-bottom: 6em;
+    color: white;
+  }
+  
+  .fab{
+    font-size: 2em;
+    color: white;
+  }
+  
+  .btn-outline-primary{
+    color: white;
+    border-color: white;
+    border: 2px solid;
+  }
+  
+  h1, h2, h3, h4, h5, h6{
+    color: white;
+  }

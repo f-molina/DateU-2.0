@@ -1,0 +1,54 @@
+body{
+    /*background-color: #DCDCDC;*/
+    background: linear-gradient(to left, #7b4397, #dc2430);
+}
+
+.top{
+    border: solid #DCDCDC 1px;
+}
+
+.top ul li{
+    list-style: none;
+    text-align: center;
+    margin: 4em 0;
+}
+
+.top ul li i{
+    font-size: 4em;
+    color: white;
+}
+
+.top ul li a i:hover{
+    color: #dc2430;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.ratio {
+    background-image: url('assets/img/w2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.background img{
+    width: 300px;
+    height: 250px;
+}
+
+.navbar-nav i{
+    font-size: 3.5em;
+    padding: 0 1em;
+}

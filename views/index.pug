@@ -1,0 +1,45 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
+    link(rel='stylesheet', href='stylesheets/style.css')
+    script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.4.1/css/all.css', integrity='sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz', crossorigin='anonymous')
+    title Document
+  body
+    nav
+      .container
+        i.fab.fa-gratipay.float-left.mt-3.pl-3
+        a.btn.btn-outline-primary.float-right.mt-3(href='#', role='button') Iniciar Sesion
+    header.main
+      .container.h-100
+        .row.h-100
+          .col-md-7.mb-5
+            .header-content.mx-auto
+              h1.h1-responsive.mb-5
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum,
+                | autem. Magni
+                | nemo odit delectus iste atque, officia illum?
+              .text-center
+                a.btn.btn-outline-primary(href="/users/login",) Registrar
+                a.btn.btn-outline-primary(href="/chat",) Chat
+          .col-md-5.text-center
+            #myCarousel.profile-container
+              .carousel-inner
+                .carousel-item.active
+                  img.img-fluid(src='images/w2.jpg', alt='w2')
+                .carousel-item
+                  img.img-fluid(src='images/w3.jpg', alt='w3')
+              a.carousel-control-prev(href='#myCarousel')
+                span.carousel-control-prev-icon
+              a.carousel-control-next(href='#myCarousel')
+                span.carousel-control-next-icon
+            .mt-3
+              h4.h4-responsive Lorem
+              p Lorem ipsum dolor.
+              script(src='javascripts/script.js')
