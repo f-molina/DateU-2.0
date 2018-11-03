@@ -3,6 +3,7 @@ const express = require("express");
 const logger = require("morgan");
 const path = require("path");
 const session = require("express-session");
+//const io = require("socket.io").listen(Server);
 
 const auth = require("./auth");
 const middleware = require("./middleware");
@@ -53,5 +54,10 @@ app.use(function(err, req, res, next) {
   res.render("error");
 });
 
-
+/*io.sockets.on('connection', function(socket){
+  socket.on('sendMessage', function(data){
+    io.sockets.emit('newMessage', {msg: data})
+  });
+});
+*/
 module.exports = app;

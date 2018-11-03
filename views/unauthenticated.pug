@@ -1,7 +1,29 @@
 block variables
   - var title = "Unauthenticated"
 
-block content
-  h2.text-center You Must Log In to View This Page
-  p.text-center.
-    You must be signed in to view this page. Please #[a(href="/users/login", title="Login") login or register] to view this page.
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Document
+  body
+    header
+      h1 You must be signed in to view this page.
+      p
+        | You must be signed in to view this page. Please 
+        a(href='/users/login') login or register
+        |             to view this page.
+    style.
+      body{
+      background: linear-gradient(to left, #7b4397, #dc2430);
+      font-family: "proxima-nova",  "Source Sans Pro", sans-serif;
+      color: #f5f5f5;
+      text-align: center;
+      font-size: 2.5em;
+      margin-top: 4em;
+      }
+      a{
+      color: #f5f5f5;
+      }
