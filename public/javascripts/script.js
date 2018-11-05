@@ -14,3 +14,11 @@ $(".carousel-control-prev").click(function(){
 $(".carousel-control-next").click(function(){
     $("#myCarousel").carousel("next");
 });
+
+//scrollReveal
+
+ScrollReveal().reveal('.heading1',{delay:500});
+ScrollReveal().reveal('.p1',{delay:800});
+ScrollReveal().reveal('.c1',{delay:500});
+ScrollReveal().reveal('.c2',{delay:1000});
+ScrollReveal().reveal('.c3',{delay:1500});

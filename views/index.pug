@@ -8,6 +8,7 @@ html(lang='en')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
+    script(src="https://unpkg.com/scrollreveal@4")
     link(rel='stylesheet', href='/stylesheets/style2.css')
     link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.4.1/css/all.css', integrity='sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz', crossorigin='anonymous')
     title Portal
@@ -36,7 +37,7 @@ html(lang='en')
           li.item3
         .carousel-inner
           .carousel-item.active.item.b1
-            .header-content
+            .header-content.text-center
               h1.h1-responsive.float-md-right.he1
                 | Lorem ipsum dolor sit amet,
                 br
@@ -47,9 +48,9 @@ html(lang='en')
                 | Lorem ipsum dolor sit amet,
                 br
                 | consectetur adipisicing elit.
-              a.btn.btn-primary(href='#') Registrar
+              a.btn.btn-primary(href='/users/login') Registrar
           .carousel-item.item.b3
-            .header-content
+            .header-content.text-center
               h1.h1-responsive.float-md-left.he3
                 | Lorem ipsum dolor sit amet,
                 br
@@ -61,8 +62,8 @@ html(lang='en')
     // Page Content
     section.py-2
       .container
-        h1.text-center Lorem
-        p
+        h1.text-center.heading1.mt-5 Lorem
+        p.p1
           | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt non corrupti ut molestias velit vitae iusto
           | commodi voluptatibus sapiente totam nesciunt esse autem, dolorem quaerat adipisci optio soluta repellendus ea!
           | Inventore, laudantium? Sequi quam dignissimos eligendi iusto voluptatem officia, quas labore nam soluta itaque
@@ -74,4 +75,15 @@ html(lang='en')
           | Fugiat eos, recusandae minima laborum perferendis ex iure dolore quos animi, est doloribus provident. Modi
           | commodi rem qui libero similique quibusdam veritatis adipisci tempore optio placeat voluptatum, ab assumenda
           | alias.
+    section.container.py-2.text-center
+      .row
+        .col-md-4.c1
+          i.fas.fa-user-friends
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        .col-md-4.c2
+          i.fas.fa-heart
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        .col-md-4.c3
+          i.fas.fa-book
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit.
     script(src='/javascripts/script.js')
