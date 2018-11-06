@@ -9,6 +9,7 @@ html(lang='en')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     script(src="https://unpkg.com/scrollreveal@4")
+    link(href='https://fonts.googleapis.com/css?family=Montserrat:500', rel='stylesheet')
     link(rel='stylesheet', href='/stylesheets/style2.css')
     link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.4.1/css/all.css', integrity='sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz', crossorigin='anonymous')
     title Portal
@@ -38,7 +39,7 @@ html(lang='en')
         .carousel-inner
           .carousel-item.active.item.b1
             .header-content.text-center
-              h1.h1-responsive.float-md-right.he1
+              h1.h1-responsive.text-center.he2
                 | Lorem ipsum dolor sit amet,
                 br
                 | consectetur adipisicing elit.
@@ -60,9 +61,11 @@ html(lang='en')
         a.carousel-control-next(href='#myCarousel')
           span.carousel-control-next-icon
     // Page Content
-    section.py-2
+    section.sec1
       .container
-        h1.text-center.heading1.mt-5 Lorem
+        .heading1.text-center
+          h3.subhead A new trend
+          h1.display-1.display-1--light.mb-5 Welcome to DateU
         p.p1
           | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt non corrupti ut molestias velit vitae iusto
           | commodi voluptatibus sapiente totam nesciunt esse autem, dolorem quaerat adipisci optio soluta repellendus ea!
@@ -75,15 +78,45 @@ html(lang='en')
           | Fugiat eos, recusandae minima laborum perferendis ex iure dolore quos animi, est doloribus provident. Modi
           | commodi rem qui libero similique quibusdam veritatis adipisci tempore optio placeat voluptatum, ab assumenda
           | alias.
-    section.container.py-2.text-center
-      .row
-        .col-md-4.c1
-          i.fas.fa-user-friends
-          p Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        .col-md-4.c2
-          i.fas.fa-heart
-          p Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        .col-md-4.c3
-          i.fas.fa-book
-          p Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    section.gray-bg.section-padding
+      .container
+        .row
+          .col-xs-12.col-sm-4
+            .box.box1
+              .box-icon
+              i.fas.fa-user-friends.mb-5
+              h4 Find Friends
+              p
+              | Lorem ipsum dolor sit amt, consectet adop adipisicing elit, sed do eiusmod tepo raraincididunt ugt labore.
+          .col-xs-12.col-sm-4
+            .box.box2
+              .box-icon
+              i.fas.fa-heart.mb-5
+              h4 Find Love
+              p
+              | Lorem ipsum dolor sit amt, consectet adop adipisicing elit, sed do eiusmod tepo raraincididunt ugt labore.
+          .col-xs-12.col-sm-4
+            .box.box3
+              .box-icon
+               i.fas.fa-book.mb-5
+               h4 Find other students!
+               p
+              | Lorem ipsum dolor sit amt, consectet adop adipisicing elit, sed do eiusmod tepo raraincididunt ugt labore. 
+    section.contac.sky-bg
+      .container
+        .heading2.text-center
+          h3.subhead Contact Us
+          h1.display-2.display-2--light.mb-5 Tell us how you feel!
+          form#contactForm(name='contactForm', method='post', action='', novalidate='novalidate')
+            fieldset
+             .form-field
+               input#contactName.full-width(name='contactName', type='text', placeholder='Your Name', value='', minlength='2', required='', aria-required='true')
+             .form-field
+               input#contactEmail.full-width(name='contactEmail', type='email', placeholder='Your Email', value='', required='', aria-required='true')
+             .form-field
+              input#contactSubject.full-width(name='contactSubject', type='text', placeholder='Subject', value='')
+             .form-field
+              textarea#contactMessage.full-width(name='contactMessage', placeholder='Your Message', rows='10', cols='30', required='', aria-required='true')
+             .form-field
+              button.full-width.btn--primary Submit
     script(src='/javascripts/script.js')

@@ -3,7 +3,7 @@
 }
 
 .b1{
-    background-image: url('../images/b1.jpg');
+    background-image: url('../images/b8.jpg');
 }
 
 .b2{
@@ -42,5 +42,54 @@
 
 i{
     font-size: 5em;
+    color: #6ec7e4;
 }
 
+.sec1{
+    /*background-color: #f8f8f8;*/
+    background-color: #6ec7e4;
+    color: white;
+    font-family: "montserrat-medium", sans-serif;
+}
+
+.box{
+    padding: 3.125em 1.875em;
+    text-align: center;
+    -webkit-box-shadow: 0 0 0 0 #ffffff;
+    box-shadow: 0 0 0 0 #ffffff;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 5px;
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+}
+
+.box:hover{
+    -webkit-box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px)
+}
+
+.sec1, .section-padding, .contac{
+    padding: 7.5em 0;
+}
+
+.contac{
+    background: url('../images/angle-bg.png') no-repeat scroll center bottom / 100% auto;
+    color: white;
+    background-color: #6ec7e4;
+}
+
+.form-field input, textarea{
+    margin: 1em 0;
+}
+
+@media (max-width: 575.98px) {
+    .display-1 {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.0;
+    }
+}

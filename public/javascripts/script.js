@@ -19,6 +19,6 @@ $(".carousel-control-next").click(function(){
 
 ScrollReveal().reveal('.heading1',{delay:500});
 ScrollReveal().reveal('.p1',{delay:800});
-ScrollReveal().reveal('.c1',{delay:500});
-ScrollReveal().reveal('.c2',{delay:1000});
-ScrollReveal().reveal('.c3',{delay:1500});
+ScrollReveal().reveal('.box1',{delay:500});
+ScrollReveal().reveal('.box2',{delay:1000});
+ScrollReveal().reveal('.box3',{delay:1500});
