@@ -15,21 +15,23 @@ html(lang='en')
     link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.4.1/css/all.css', integrity='sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz', crossorigin='anonymous')
     title Main
   body
-    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-      .container-fluid
-        button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-          i.fas.fa-align-justify
-        #navbarSupportedContent.collapse.navbar-collapse
-          h6.text-white DateU
-          ul.nav.navbar-nav.ml-auto
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      .container
+        a.navbar-brand(href='/') DateU
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
             li.nav-item.active
-              a.nav-link(href='#') Home
+              a.nav-link(href='/')
+                | Home
+                span.sr-only (current)
             li.nav-item
-              a.nav-link(href='#') My account
+              a.nav-link.active(href='#') My Account
             li.nav-item
-              a.nav-link(href='#') Matches
+              a.nav-link.active(href='#') Matches
             li.nav-item
-              a.nav-link(href="/users/logout") Sign out
+              a.nav-link.active(href="/users/logout") Sign out
     .container
       .background.mt-5
         img.img-thumbnail.img-circle.profile-pic.mx-auto.d-block.img-fluid(src='/images/w3.jpg')

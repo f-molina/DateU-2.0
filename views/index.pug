@@ -17,19 +17,23 @@ html(lang='en')
     // Navigation
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
       .container
-        a.navbar-brand(href='#') DateU
+        a.navbar-brand(href='/') DateU
         button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarResponsive.collapse.navbar-collapse
           ul.navbar-nav.ml-auto
             li.nav-item.active
-              a.nav-link(href='#')
+              a.nav-link(href='/')
                 | Home
                 span.sr-only (current)
             li.nav-item
               a.nav-link.active(href='#') About
-            li.nav-item
-              a.btn.btn-primary(href='/users/login') Login/Register
+            if user == undefined  
+              li.nav-item
+                a.btn.btn-primary.other(href='/users/login') Login/Register
+            else
+              a.nav-link.active(href="/dashboard") My Profile
+              a.nav-link.active(href="/users/logout") Sign out
     header
       #myCarousel.profile-container
         ul.carousel-indicators
@@ -98,25 +102,48 @@ html(lang='en')
           .col-xs-12.col-sm-4
             .box.box3
               .box-icon
-               i.fas.fa-book.mb-5
-               h4 Find other students!
-               p
+                i.fas.fa-book.mb-5
+                h4 Find other students!
+                p
               | Lorem ipsum dolor sit amt, consectet adop adipisicing elit, sed do eiusmod tepo raraincididunt ugt labore. 
-    section.contac.sky-bg
+    section.contac
       .container
         .heading2.text-center
           h3.subhead Contact Us
           h1.display-2.display-2--light.mb-5 Tell us how you feel!
-          form#contactForm(name='contactForm', method='post', action='', novalidate='novalidate')
-            fieldset
-             .form-field
-               input#contactName.full-width(name='contactName', type='text', placeholder='Your Name', value='', minlength='2', required='', aria-required='true')
-             .form-field
-               input#contactEmail.full-width(name='contactEmail', type='email', placeholder='Your Email', value='', required='', aria-required='true')
-             .form-field
-              input#contactSubject.full-width(name='contactSubject', type='text', placeholder='Subject', value='')
-             .form-field
-              textarea#contactMessage.full-width(name='contactMessage', placeholder='Your Message', rows='10', cols='30', required='', aria-required='true')
-             .form-field
-              button.full-width.btn--primary Submit
+        .row
+          .col-md-6.cform
+            form#contactForm(name='contactForm', method='post', action='', novalidate='novalidate')
+              fieldset
+                .form-field
+                  input#contactName.full-width(name='contactName', type='text', placeholder='Your Name', value='', minlength='2', required='', aria-required='true')
+                .form-field
+                  input#contactEmail.full-width(name='contactEmail', type='email', placeholder='Your Email', value='', required='', aria-required='true')
+                .form-field
+                  input#contactSubject.full-width(name='contactSubject', type='text', placeholder='Subject', value='')
+                .form-field
+                  textarea#contactMessage.full-width(name='contactMessage', placeholder='Message', rows='10', cols='20', required='', aria-required='true')
+                .form-field
+                  button.full-width.btn--primary Submit
+          .col-md-6.cct
+            .contact-secondary
+             .contact-info
+              h3.h6.hide-on-fullwidth Contact Info
+              .cinfo
+                h5 Where to Find Us
+                p
+                 | Bulevar Los Proceres
+                 br
+                 |                           San Salvador
+                 br
+                 |                           503 El Salvador
+              .cinfo
+                h5 Email Us At
+                p
+                 | contact@dateu.com
+              .cinfo
+                h5 Phone Support
+                p
+                 | Phone: (+503) 2257-7777      
+
     script(src='/javascripts/script.js')
