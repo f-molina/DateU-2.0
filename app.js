@@ -5,6 +5,7 @@ const path = require("path");
 const session = require("express-session");
 //const io = require("socket.io").listen(Server);
 
+
 const auth = require("./auth");
 const middleware = require("./middleware");
 
@@ -13,9 +14,17 @@ const publicRouter = require("./routes/public");
 const usersRouter = require("./routes/users");
 const userChat = require("./routes/chat");
 
+var port = 3000;
+var http = require('http');
+
 
 // App initialization
 const app = express();
+var server = http.createServer(app);
+app.set(port);
+server.listen(port);
+
+const io = require("socket.io")(server);
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -34,6 +43,21 @@ app.use(session({
 
 app.use(auth.oidc.router);
 app.use(middleware.addUser);
+
+io.on('connection', (socket)=>{
+  console.log('New user connected');
+
+  socket.on('disconnect', function () {
+    console.log('user disconnected');
+  });
+
+  socket.on('chat message', function (msg) {
+    console.log('Entrando a chat message Server');
+    io.emit('chat message', msg);
+    console.log('Saliendo de chat message Server');
+  });
+
+});
 
 // Routes
 app.use("/", publicRouter);
@@ -54,10 +78,4 @@ app.use(function(err, req, res, next) {
   res.render("error");
 });
 
-/*io.sockets.on('connection', function(socket){
-  socket.on('sendMessage', function(data){
-    io.sockets.emit('newMessage', {msg: data})
-  });
-});
-*/
 module.exports = app;

@@ -28,12 +28,10 @@ html(lang='en')
                 span.sr-only (current)
             li.nav-item
               a.nav-link.active(href='#') About
-            if user == undefined  
-              li.nav-item
-                a.btn.btn-primary.other(href='/users/login') Login/Register
-            else
-              a.nav-link.active(href="/dashboard") My Profile
-              a.nav-link.active(href="/users/logout") Sign out
+             
+            li.nav-item
+              a.btn.btn-primary.other(href='/users/login') Login/Register
+            
     header
       #myCarousel.profile-container
         ul.carousel-indicators
