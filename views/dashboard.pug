@@ -3,80 +3,108 @@ html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
+    // Font Awesome
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    // Bootstrap core CSS
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css', rel='stylesheet')
+    // Material Design Bootstrap
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css', rel='stylesheet')
     link(rel='stylesheet', href='/stylesheets/style3.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
-    script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
-    // fancyapp and font awesome
-    link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css')
-    script(src='https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js')
-    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.4.1/css/all.css', integrity='sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin='anonymous')
+    // bag-gallery css
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Josefin+Sans', rel='stylesheet')
     title Main
   body
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
       .container
-        a.navbar-brand(href='/') DateU
-        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
-          span.navbar-toggler-icon
-        #navbarResponsive.collapse.navbar-collapse
-          ul.navbar-nav.ml-auto
+        button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          i.fas.fa-align-justify
+        #navbarSupportedContent.collapse.navbar-collapse
+          h6.text-white DateU
+          ul.nav.navbar-nav.ml-auto
             li.nav-item.active
-              a.nav-link(href='/')
-                | Home
-                span.sr-only (current)
+              a.nav-link(href='#') Home
             li.nav-item
-              a.nav-link.active(href='#') My Account
+              a.nav-link(href='#') My account
             li.nav-item
-              a.nav-link.active(href='#') Matches
+              a.nav-link(href='#') Matches
             li.nav-item
-              a.nav-link.active(href="/users/logout") Sign out
+              a.nav-link(href='/users/logout') Sign out
+    // banner-profile
+    .wrapper-header.mask.rgba-gradient
+      header.container.headerb
+        .row
+          .col-md-3
+            .mainb
+              img.rounded-circle.img-fluid(src='/images/w7.jpg', alt='Profile pic')
+          .col-md-7.prof-info
+            .pname.text-white
+              h6 Scarlett Johansson
+              h6 32 anios
+              h6 Ing. pupusas
+          .col-md-2.buttons.float-right.mt-3
+            button.btn.btn-primary
+              i.fa.fa-bolt.mr-1
+              | SL
+            button.btn.btn-primary
+              i.fas.fa-heart.mr-1
+              | CF
+            button.btn.btn-primary
+              i.fab.fa-rocketchat.mr-1
+              | CH
     .container
-      .background.mt-5
-        img.img-thumbnail.img-circle.profile-pic.mx-auto.d-block.img-fluid(src='/images/w3.jpg')
-        h6.h6-responsive.text-center.text-white Lorem lol
-        p.text-center.text-white 100 anios
-    .container
-      nav.navbar.navbar-expand-sm.justify-content-center
-        ul.navbar-nav
-          li
-            a(href='#')
-              i.fas.fa-heart
-          li
-            a(href='#')
-              i.fas.fa-mask
-          li
-            a(href='#')
-              i.fas.fa-bolt
-    .container.h-100.mt-5.mb-5
-      .row.text-center.h-100
-        .col-md-4
-          a(href='https://source.unsplash.com/0JYgd2QuMfw/1500x1000', data-fancybox='gallery', data-caption='Descripcion #1')
-            img(src='https://source.unsplash.com/0JYgd2QuMfw/350x250')
-        .col-md-4
-          a(href='https://source.unsplash.com/xAgvgQpYsf4/1500x1000', data-fancybox='gallery', data-caption='Descripcion #2')
-            img(src='https://source.unsplash.com/xAgvgQpYsf4/350x250')
-        .col-md-4
-          a(href='https://source.unsplash.com/0JYgd2QuMfw/1500x1000', data-fancybox='gallery', data-caption='Descripcion #1')
-            img(src='https://source.unsplash.com/0JYgd2QuMfw/350x250')
-      .row.text-center.mt-5.h-100
-        .col-md-4
-          a(href='https://source.unsplash.com/0JYgd2QuMfw/1500x1000', data-fancybox='gallery', data-caption='Descripcion #1')
-            img(src='https://source.unsplash.com/0JYgd2QuMfw/350x250')
-        .col-md-4
-          a(href='https://source.unsplash.com/xAgvgQpYsf4/1500x1000', data-fancybox='gallery', data-caption='Descripcion #2')
-            img(src='https://source.unsplash.com/xAgvgQpYsf4/350x250')
-        .col-md-4
-          a(href='https://source.unsplash.com/0JYgd2QuMfw/1500x1000', data-fancybox='gallery', data-caption='Descripcion #1')
-            img(src='https://source.unsplash.com/0JYgd2QuMfw/350x250')
-      .row.text-center.mt-5.h-100
-        .col-md-4
-          a(href='https://source.unsplash.com/0JYgd2QuMfw/1500x1000', data-fancybox='gallery', data-caption='Descripcion #1')
-            img(src='https://source.unsplash.com/0JYgd2QuMfw/350x250')
-        .col-md-4
-          a(href='https://source.unsplash.com/xAgvgQpYsf4/1500x1000', data-fancybox='gallery', data-caption='Descripcion #2')
-            img(src='https://source.unsplash.com/xAgvgQpYsf4/350x250')
-        .col-md-4
-          a(href='https://source.unsplash.com/0JYgd2QuMfw/1500x1000', data-fancybox='gallery', data-caption='Descripcion #1')
-            img(src='https://source.unsplash.com/0JYgd2QuMfw/350x250')
+      ul.filter.controls
+        li.control Pictures
+        li.control Info
+      hr.hr-dark
+    .container.gallery.mt-5
+      .row
+        .col-sm-12.col-md-8.gal-item
+          .box
+            a.lightbox(href='/images/park.jpg')
+              img(src='/images/park.jpg', alt='Park')
+        .col-sm-6.col-md-4.gal-item
+          .box
+            a.lightbox(href='/images/bridge.jpg')
+              img(src='/images/bridge.jpg', alt='Bridge')
+        .col-sm-6.col-md-4.gal-item
+          .box
+            a.lightbox(href='/images/tunnel.jpg')
+              img(src='/images/tunnel.jpg', alt='Tunnel')
+        .col-sm-6.col-md-4.gal-item
+          .box
+            a.lightbox(href='/images/coast.jpg')
+              img(src='/images/coast.jpg', alt='Coast')
+        .col-sm-6.col-md-4.gal-item
+          .box
+            a.lightbox(href='/images/rails.jpg')
+              img(src='/images/rails.jpg', alt='Rails')
+        .col-sm-6.col-md-4.gal-item
+          .box
+            a.lightbox(href='/images/traffic.jpg')
+              img(src='/images/traffic.jpg', alt='Traffic')
+        .col-sm-12.col-md-8.gal-item
+          .box
+            a.lightbox(href='/images/rocks.jpg')
+              img(src='/images/rocks.jpg', alt='Rocks')
+        .col-sm-6.col-md-4.gal-item
+          .box
+            a.lightbox(href='/images/benches.jpg')
+              img(src='/images/benches.jpg', alt='Benches')
+        .col-sm-6.col-md-4.gal-item
+          .box
+            i.fas.fa-plus-circle(style='font-size: 20em; cursor: pointer;')
+    // Scripts
+    // JQuery
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    // Bootstrap tooltips
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js')
+    // Bootstrap core JavaScript
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js')
+    // MDB core JavaScript
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/js/mdb.min.js')
+    // Baguette gallery
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js')
+    script.
+      baguetteBox.run('.gallery');
