@@ -7,15 +7,16 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/styleChat.css', type='text/css')
     link(rel='stylesheet prefetch', href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css')
     link(rel='stylesheet prefetch', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css')
+    script(src='/socket.io/socket.io.js')
     script(src='/javascripts/scriptChat.js')
-    title Document
+    title Chat
   body
     #frame
       #sidepanel
         #profile
           .wrap
             img#profile-img.online(src='http://emilcarlsson.se/assets/mikeross.png', alt='')
-            p Mike Ross
+            p #{user.profile.firstName}
         #search
           label(for='')
             i.fa.fa-search(aria-hidden='true')
@@ -123,5 +124,6 @@ html(lang='en')
           .wrap
             input.messageContent(type='text', placeholder='Write your message...')
             i.fa.fa-paperclip.attachment(aria-hidden='true')
-            button.submit(onclick='newMessage()')
+            button.submit(onclick='sendMessage()')
               i.fa.fa-paper-plane(aria-hidden='true')
+    
