@@ -87,3 +87,13 @@
     color: #979797;
     cursor: pointer;
 }
+
+.stats{
+    margin-top: 3em;
+}
+
+.secrowicons{
+    margin-top: 1em;
+    font-size: 3em;
+    color: #4285f4!important;
+}

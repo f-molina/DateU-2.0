@@ -28,9 +28,7 @@ html(lang='en')
             li.nav-item
               a.nav-link(href='#') My account
             li.nav-item
-              a.nav-link.active(href='/chat') Chat
-            li.nav-item
-              a.nav-link.active(href='#') Matches
+              a.nav-link(href='#') Matches
             li.nav-item
               a.nav-link(href='/users/logout') Sign out
     // banner-profile
@@ -39,7 +37,7 @@ html(lang='en')
         .row
           .col-md-3
             .mainb
-              img.rounded-circle.img-fluid(src='/images/w7.jpg', alt='Profile pic')
+              img.rounded-circle.img-fluid(src='images/w7.jpg', alt='Profile pic')
           .col-md-7.prof-info
             .pname.text-white
               h6 Scarlett Johansson
@@ -57,46 +55,84 @@ html(lang='en')
               | CH
     .container
       ul.filter.controls
-        li.control Pictures
-        li.control Info
+        li(onclick='slider2()') Bio
+        li(onclick='slider1()') Pictures
       hr.hr-dark
-    .container.gallery.mt-5
+    #bio.container
+      .row.my-5
+        .col-md-6
+          .card
+            .card-body
+              .row
+                .col-12.col-lg-8.col-md-6
+                  h3.display-4.mb-0.text-truncated Biografia
+                  p.lead lorem
+                  p
+                    | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                .col-12.col-lg-4.col-md-6.text-center
+                  img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='')
+              // /row
+              // /card-block
+        .col-md-2.text-center.stats
+          .card
+            .card-body
+              h3.mb-0 100K
+              small stats
+            // /card-block
+        .col-md-2.text-center.stats
+          .card
+            .card-body
+              h3.mb-0 100K
+              small stats
+            // /card-block
+        .col-md-2.text-center.stats
+          .card
+            .card-body
+              h3.mb-0 100k
+              small stats
+            // /card-block
+            // end rowmain div de abajo
+      .row.my-5
+        .col-md-6
+          .card
+            .card-body
+              .row.text-center
+                .col-md-4.secrowicons
+                  i.fas.fa-bolt
+                .col-md-4.secrowicons
+                  i.fas.fa-heart
+                .col-md-4.secrowicons
+                  i.fas.fa-comment
+        .col-md-6
+          .card
+            .card-body
+              h3.display-4.mb-0.text-truncated Intereses
+              p
+                | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus illum asperiores
+                | eligendi.
+      // end secondrow div arriba
+    #gallery.container.gallery.mt-5(style='display: none;')
       .row
         .col-sm-12.col-md-8.gal-item
           .box
-            a.lightbox(href='/images/park.jpg')
-              img(src='/images/park.jpg', alt='Park')
+            a.lightbox(href='images/park.jpg')
+              img(src='images/park.jpg', alt='Park')
         .col-sm-6.col-md-4.gal-item
           .box
-            a.lightbox(href='/images/bridge.jpg')
-              img(src='/images/bridge.jpg', alt='Bridge')
+            a.lightbox(href='images/bridge.jpg')
+              img(src='images/bridge.jpg', alt='Bridge')
         .col-sm-6.col-md-4.gal-item
           .box
-            a.lightbox(href='/images/tunnel.jpg')
-              img(src='/images/tunnel.jpg', alt='Tunnel')
+            a.lightbox(href='images/tunnel.jpg')
+              img(src='images/tunnel.jpg', alt='Tunnel')
         .col-sm-6.col-md-4.gal-item
           .box
-            a.lightbox(href='/images/coast.jpg')
-              img(src='/images/coast.jpg', alt='Coast')
+            a.lightbox(href='images/coast.jpg')
+              img(src='images/coast.jpg', alt='Coast')
         .col-sm-6.col-md-4.gal-item
           .box
-            a.lightbox(href='/images/rails.jpg')
-              img(src='/images/rails.jpg', alt='Rails')
-        .col-sm-6.col-md-4.gal-item
-          .box
-            a.lightbox(href='/images/traffic.jpg')
-              img(src='/images/traffic.jpg', alt='Traffic')
-        .col-sm-12.col-md-8.gal-item
-          .box
-            a.lightbox(href='/images/rocks.jpg')
-              img(src='/images/rocks.jpg', alt='Rocks')
-        .col-sm-6.col-md-4.gal-item
-          .box
-            a.lightbox(href='/images/benches.jpg')
-              img(src='/images/benches.jpg', alt='Benches')
-        .col-sm-6.col-md-4.gal-item
-          .box
-            i.fas.fa-plus-circle(style='font-size: 20em; cursor: pointer;')
+            a.lightbox(href='images/rails.jpg')
+              img(src='images/rails.jpg', alt='Rails')
     // Scripts
     // JQuery
     script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
@@ -108,5 +144,6 @@ html(lang='en')
     script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/js/mdb.min.js')
     // Baguette gallery
     script(src='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js')
+    script(src='/javascripts/script.js')
     script.
       baguetteBox.run('.gallery');

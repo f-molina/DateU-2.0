@@ -22,3 +22,21 @@ ScrollReveal().reveal('.p1',{delay:800});
 ScrollReveal().reveal('.box1',{delay:500});
 ScrollReveal().reveal('.box2',{delay:1000});
 ScrollReveal().reveal('.box3',{delay:1500});
+
+function slider1() {
+    var x = document.getElementById("bio");
+    var y = document.getElementById("gallery");
+    if (y.style.display === "none") {
+        y.style.display = "block";
+        x.style.display = "none";
+    }
+}
+
+function slider2() {
+    var x = document.getElementById("bio");
+    var y = document.getElementById("gallery");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "none";
+    }
+}
