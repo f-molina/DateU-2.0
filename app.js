@@ -3,11 +3,13 @@ const express = require("express");
 const logger = require("morgan");
 const path = require("path");
 const session = require("express-session");
+const mongoose = require('mongoose');
 //const io = require("socket.io").listen(Server);
-
+mongoose.connect("mongodb://localhost/web", {useNewUrlParser: true});
 
 const auth = require("./auth");
 const middleware = require("./middleware");
+const userSchema = require('./models/users');
 
 const dashboardRouter = require("./routes/dashboard");
 const publicRouter = require("./routes/public");
@@ -61,9 +63,9 @@ io.on('connection', (socket)=>{
 
 // Routes
 app.use("/", publicRouter);
-app.use("/dashboard", middleware.loginRequired, dashboardRouter);
+app.use("/dashboard", middleware.loginRequired, dashboardRouter, userSchema);
 app.use("/users", usersRouter);
-app.use('/chat', middleware.loginRequired, userChat);
+app.use('/chat', middleware.loginRequired, userChat, userSchema);
 
 // Error handlers
 app.use(function(req, res, next) {
