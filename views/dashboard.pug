@@ -24,7 +24,7 @@ html(lang='en')
           h6.text-white DateU
           ul.nav.navbar-nav.ml-auto
             li.nav-item.active
-              a.nav-link(href='#') Home
+              a.nav-link(href='/') Home
             li.nav-item
               a.nav-link(href='#') My account
             li.nav-item
@@ -41,8 +41,8 @@ html(lang='en')
           .col-md-7.prof-info
             .pname.text-white
               h6 #{user.profile.firstName} #{user.profile.lastName}
-              h6 32 anios
-              h6 Ing. pupusas
+              h6 #{user.profile.edad}
+              h6 #{user.profile.carrera}
           .col-md-2.buttons.float-right.mt-3
             button.btn.btn-primary
               i.fa.fa-bolt.mr-1
@@ -67,8 +67,7 @@ html(lang='en')
                 .col-12.col-lg-8.col-md-6
                   h3.display-4.mb-0.text-truncated Biografia
                   p.lead lorem
-                  p
-                    | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  p #{user.profile.biografia}
                 .col-12.col-lg-4.col-md-6.text-center
                   img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='')
               // /row
@@ -107,9 +106,7 @@ html(lang='en')
           .card
             .card-body
               h3.display-4.mb-0.text-truncated Intereses
-              p
-                | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus illum asperiores
-                | eligendi.
+              p #{user.profile.intereses}
       // end secondrow div arriba
     #gallery.container.gallery.mt-5(style='display: none;')
       .row
@@ -120,8 +117,8 @@ html(lang='en')
                   input#imageUpload1(type='file', accept='.png, .jpg, .jpeg')
                   label(for='imageUpload1')
                 .avatar-preview
-                  a.lightbox(href='http://i.pravatar.cc/500?img=7')
-                    img#imagePreview1(src='http://i.pravatar.cc/500?img=7')
+                  a.lightbox(href='images/w7.jpg')
+                    img#imagePreview1(src='images/w7.jpg')
         .col-sm-6.col-md-4.gal-item
           .box
               .avatar-upload
@@ -129,35 +126,35 @@ html(lang='en')
                   input#imageUpload2(type='file', accept='.png, .jpg, .jpeg')
                   label(for='imageUpload2')
                 .avatar-preview
-                  a.lightbox(href='http://i.pravatar.cc/500?img=7')
-                    img#imagePreview2(src='http://i.pravatar.cc/500?img=7')
+                  a.lightbox(href='images/w2.jpg')
+                    img#imagePreview2(src='images/w2.jpg')
         .col-sm-6.col-md-4.gal-item
           .box
-            
               .avatar-upload
                 .avatar-edit
                   input#imageUpload3(type='file', accept='.png, .jpg, .jpeg')
                   label(for='imageUpload3')
                 .avatar-preview
-                  #imagePreview3(style='background-image: url(http://i.pravatar.cc/500?img=7);')
+                  a.lightbox(href='images/w3.jpg')
+                    img#imagePreview2(src='images/w3.jpg')
         .col-sm-6.col-md-4.gal-item
           .box
-            
               .avatar-upload
                 .avatar-edit
                   input#imageUpload4(type='file', accept='.png, .jpg, .jpeg')
                   label(for='imageUpload4')
                 .avatar-preview
-                  #imagePreview4(style='background-image: url(http://i.pravatar.cc/500?img=7);')
+                  a.lightbox(href='images/benches.jpg')
+                    img#imagePreview2(src='images/benches.jpg')
         .col-sm-6.col-md-4.gal-item
           .box
-            
               .avatar-upload
                 .avatar-edit
                   input#imageUpload5(type='file', accept='.png, .jpg, .jpeg')
                   label(for='imageUpload5')
                 .avatar-preview
-                  #imagePreview5(style='background-image: url(http://i.pravatar.cc/500?img=7);')
+                  a.lightbox(href='images/park.jpg')
+                    img#imagePreview2(src='images/park.jpg')
     // Scripts
     // JQuery
     script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
