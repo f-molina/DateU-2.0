@@ -15,6 +15,7 @@ const dashboardRouter = require("./routes/dashboard");
 const publicRouter = require("./routes/public");
 const usersRouter = require("./routes/users");
 const userChat = require("./routes/chat");
+const UserRoutes = require('./routes/UserRoute');
 
 var port = 3000;
 var http = require('http');
@@ -63,7 +64,7 @@ io.on('connection', (socket)=>{
 
 // Routes
 app.use("/", publicRouter);
-app.use("/dashboard", middleware.loginRequired, dashboardRouter, userSchema);
+app.use("/dashboard", middleware.loginRequired, dashboardRouter, UserRoutes);
 app.use("/users", usersRouter);
 app.use('/chat', middleware.loginRequired, userChat, userSchema);
 

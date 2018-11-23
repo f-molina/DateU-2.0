@@ -19,25 +19,52 @@ function slider2() {
 function readURL(input,imgPrev) {
 
     if (input.files && input.files[0]) {
-        // console.log(input.files);
-        // console.log(input.files[0]);
-        
-        
         var reader = new FileReader();
         reader.onload = function(e) {
             let im = document.getElementById(imgPrev);
             im.src = e.target.result;
-            //$(`#${imgPrev}`).css('background-image', 'url('+e.target.result +')');
-      //      $('#imagePreview').hide();
             var elemento = document.getElementById(`${imgPrev}`);
             
             fadeIn(elemento,650);
-            //$('#imagePreview').fadeIn(650);
+
+            
+
         }
         reader.readAsDataURL(input.files[0]);
     }
-    // else console.log('no');
-    
+
+    fetch('/dashboard/users', {
+        method: 'GET'
+    }).then(res => {return res.json()})
+    .then(data => {
+        console.log(data);
+    })
+
+    let form = document.userForm;
+    let nam = document.getElementById('UserName').innerText;
+    let data = {
+        profileImage: form.imagePreview2.src,
+        name: nam
+    };
+    fetch('/dashboard/images', {
+        method: 'PUT',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(res => {
+        console.log('res ok');
+        return res.json();
+    })
+    .then(data => {
+        if(data.ok){
+            console.log('Data ok');
+            console.log(data);
+            let per = document.getElementsByName('profileImage');
+            per.src = form.imagePreview2.src;
+        }
+    })
+
 }
 
 var el = document.getElementById('imageUpload1');
@@ -46,9 +73,6 @@ var el3 = document.getElementById('imageUpload3');
 var el4 = document.getElementById('imageUpload4');
 var el5 = document.getElementById('imageUpload5');
 
-// el.addEventListener('click',()=>{
-//     readURL(el);    
-// });
 
 delegate(document,'change','#imageUpload1',()=>{
     readURL(el,'imagePreview1');    
@@ -78,13 +102,7 @@ function delegate(el, evt, sel, handler) {
         }
     });
 }
-/*
 
-$("#imageUpload").change(function() {
-    console.log(this);
-    
-    readURL(this);
-});*/
 function fadeIn(el, time) {
     el.style.opacity = 0;
     var last = +new Date();

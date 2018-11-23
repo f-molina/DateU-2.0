@@ -16,6 +16,7 @@ html(lang='en')
     link(href='https://fonts.googleapis.com/css?family=Josefin+Sans', rel='stylesheet')
     title Main
   body
+    h1= pics
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
       .container
         button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
@@ -31,130 +32,131 @@ html(lang='en')
               a.nav-link(href='#') Matches
             li.nav-item
               a.nav-link(href='/users/logout') Sign out
-    // banner-profile
-    .wrapper-header.mask.rgba-gradient
-      header.container.headerb
-        .row
-          .col-md-3
-            .mainb
-              img.rounded-circle.img-fluid(src='images/w7.jpg', alt='Profile pic')
-          .col-md-7.prof-info
-            .pname.text-white
-              h6 #{user.profile.firstName} #{user.profile.lastName}
-              h6 #{user.profile.edad}
-              h6 #{user.profile.carrera}
-          .col-md-2.buttons.float-right.mt-3
-            button.btn.btn-primary
-              i.fa.fa-bolt.mr-1
-              | SL
-            button.btn.btn-primary
-              i.fas.fa-heart.mr-1
-              | CF
-            button.btn.btn-primary
-              i.fab.fa-rocketchat.mr-1
-              | CH
-    .container
-      ul.filter.controls
-        li(onclick='slider2()') Bio
-        li(onclick='slider1()') Pictures
-      hr.hr-dark
-    #bio.container
-      .row.my-5
-        .col-md-6
-          .card
-            .card-body
-              .row
-                .col-12.col-lg-8.col-md-6
-                  h3.display-4.mb-0.text-truncated Biografia
-                  p.lead lorem
-                  p #{user.profile.biografia}
-                .col-12.col-lg-4.col-md-6.text-center
-                  img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='')
-              // /row
+    form(action='#' name='userForm')
+      //banner-profile
+      .wrapper-header.mask.rgba-gradient
+        header.container.headerb
+          .row
+            .col-md-3
+              .mainb
+                img.rounded-circle.img-fluid(src='images/w7.jpg', alt='Profile pic', name='profileImage')
+            .col-md-7.prof-info
+              .pname.text-white
+                h6(name='UserName' id='UserName') #{user.profile.firstName}
+                h6 #{user.profile.edad}
+                h6 #{user.profile.carrera}
+            .col-md-2.buttons.float-right.mt-3
+              button.btn.btn-primary
+                i.fa.fa-bolt.mr-1
+                | SL
+              button.btn.btn-primary
+                i.fas.fa-heart.mr-1
+                | CF
+              button.btn.btn-primary
+                i.fab.fa-rocketchat.mr-1
+                | CH
+      .container
+        ul.filter.controls
+          li(onclick='slider2()') Bio
+          li(onclick='slider1()') Pictures
+        hr.hr-dark
+      #bio.container
+        .row.my-5
+          .col-md-6
+            .card
+              .card-body
+                .row
+                  .col-12.col-lg-8.col-md-6
+                    h3.display-4.mb-0.text-truncated Biografia
+                    p.lead lorem
+                    p #{user.profile.biografia}
+                  .col-12.col-lg-4.col-md-6.text-center
+                    img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='')
+                // /row
+                // /card-block
+          .col-md-2.text-center.stats
+            .card
+              .card-body
+                h3.mb-0 100K
+                small stats
               // /card-block
-        .col-md-2.text-center.stats
-          .card
-            .card-body
-              h3.mb-0 100K
-              small stats
-            // /card-block
-        .col-md-2.text-center.stats
-          .card
-            .card-body
-              h3.mb-0 100K
-              small stats
-            // /card-block
-        .col-md-2.text-center.stats
-          .card
-            .card-body
-              h3.mb-0 100k
-              small stats
-            // /card-block
-            // end rowmain div de abajo
-      .row.my-5
-        .col-md-6
-          .card
-            .card-body
-              .row.text-center
-                .col-md-4.secrowicons
-                  i.fas.fa-bolt
-                .col-md-4.secrowicons
-                  i.fas.fa-heart
-                .col-md-4.secrowicons
-                  i.fas.fa-comment
-        .col-md-6
-          .card
-            .card-body
-              h3.display-4.mb-0.text-truncated Intereses
-              p #{user.profile.intereses}
-      // end secondrow div arriba
-    #gallery.container.gallery.mt-5(style='display: none;')
-      .row
-        .col-sm-12.col-md-4.gal-item
-          .box
-              .avatar-upload
-                .avatar-edit
-                  input#imageUpload1(type='file', accept='.png, .jpg, .jpeg')
-                  label(for='imageUpload1')
-                .avatar-preview
-                  a.lightbox(href='images/w7.jpg')
-                    img#imagePreview1(src='images/w7.jpg')
-        .col-sm-6.col-md-4.gal-item
-          .box
-              .avatar-upload
-                .avatar-edit
-                  input#imageUpload2(type='file', accept='.png, .jpg, .jpeg')
-                  label(for='imageUpload2')
-                .avatar-preview
-                  a.lightbox(href='images/w2.jpg')
-                    img#imagePreview2(src='images/w2.jpg')
-        .col-sm-6.col-md-4.gal-item
-          .box
-              .avatar-upload
-                .avatar-edit
-                  input#imageUpload3(type='file', accept='.png, .jpg, .jpeg')
-                  label(for='imageUpload3')
-                .avatar-preview
-                  a.lightbox(href='images/w3.jpg')
-                    img#imagePreview2(src='images/w3.jpg')
-        .col-sm-6.col-md-4.gal-item
-          .box
-              .avatar-upload
-                .avatar-edit
-                  input#imageUpload4(type='file', accept='.png, .jpg, .jpeg')
-                  label(for='imageUpload4')
-                .avatar-preview
-                  a.lightbox(href='images/benches.jpg')
-                    img#imagePreview2(src='images/benches.jpg')
-        .col-sm-6.col-md-4.gal-item
-          .box
-              .avatar-upload
-                .avatar-edit
-                  input#imageUpload5(type='file', accept='.png, .jpg, .jpeg')
-                  label(for='imageUpload5')
-                .avatar-preview
-                  a.lightbox(href='images/park.jpg')
-                    img#imagePreview2(src='images/park.jpg')
+          .col-md-2.text-center.stats
+            .card
+              .card-body
+                h3.mb-0 100K
+                small stats
+              // /card-block
+          .col-md-2.text-center.stats
+            .card
+              .card-body
+                h3.mb-0 100k
+                small stats
+              // /card-block
+              // end rowmain div de abajo
+        .row.my-5
+          .col-md-6
+            .card
+              .card-body
+                .row.text-center
+                  .col-md-4.secrowicons
+                    i.fas.fa-bolt
+                  .col-md-4.secrowicons
+                    i.fas.fa-heart
+                  .col-md-4.secrowicons
+                    i.fas.fa-comment
+          .col-md-6
+            .card
+              .card-body
+                h3.display-4.mb-0.text-truncated Intereses
+                p #{user.profile.intereses}
+        // end secondrow div arriba
+      #gallery.container.gallery.mt-5(style='display: none;')
+        .row
+          .col-sm-12.col-md-4.gal-item
+            .box
+                .avatar-upload
+                  .avatar-edit
+                    input#imageUpload1(type='file', accept='.png, .jpg, .jpeg')
+                    label(for='imageUpload1')
+                  .avatar-preview
+                    a.lightbox(href='images/w7.jpg')
+                      img#imagePreview1(src='images/w7.jpg')
+          .col-sm-6.col-md-4.gal-item
+            .box
+                .avatar-upload
+                  .avatar-edit
+                    input#imageUpload2(type='file', accept='.png, .jpg, .jpeg')
+                    label(for='imageUpload2')
+                  .avatar-preview
+                    a.lightbox(href='images/w2.jpg')
+                      img#imagePreview2(src='images/w2.jpg' name='imagePreview2')
+          .col-sm-6.col-md-4.gal-item
+            .box
+                .avatar-upload
+                  .avatar-edit
+                    input#imageUpload3(type='file', accept='.png, .jpg, .jpeg')
+                    label(for='imageUpload3')
+                  .avatar-preview
+                    a.lightbox(href='images/w3.jpg')
+                      img#imagePreview3(src='images/w3.jpg')
+          .col-sm-6.col-md-4.gal-item
+            .box
+                .avatar-upload
+                  .avatar-edit
+                    input#imageUpload4(type='file', accept='.png, .jpg, .jpeg')
+                    label(for='imageUpload4')
+                  .avatar-preview
+                    a.lightbox(href='images/benches.jpg')
+                      img#imagePreview4(src='images/benches.jpg')
+          .col-sm-6.col-md-4.gal-item
+            .box
+                .avatar-upload
+                  .avatar-edit
+                    input#imageUpload5(type='file', accept='.png, .jpg, .jpeg')
+                    label(for='imageUpload5')
+                  .avatar-preview
+                    a.lightbox(href='images/park.jpg')
+                      img#imagePreview5(src='images/park.jpg')
     // Scripts
     // JQuery
     script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
