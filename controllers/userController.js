@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
 const userSchema = require('../models/users');
-
 const userController = {};
+const cloudinary = require('cloudinary');
+
+cloudinary.config({
+    cloud_name: "dipz4up0t",
+    api_key: "975787246228963",
+    api_secret: "37tJO_QAvGd9oBKUfIc9tX_WMOs"
+});
 
 userController.create = function(user){
     let data = {
@@ -40,6 +46,16 @@ userController.updateImages = function(req,res){
     let update = {
         profileImage: req.body.profileImage   
     };
+    //req.files.image.path
+    cloudinary.uploader.upload('./public/images/coast.jpg', 
+        function (result) {
+            console.log(`Resultado: ${result.url}`);
+            update.profileImage = result.url;
+        },
+        {
+            transformation: [{ width: 400, height: 400 }
+    ]});
+
     console.log('antes de actualizar');
     console.log(req.body);
     userSchema.findOneAndUpdate({name: req.body.name}, update, function(err,old){

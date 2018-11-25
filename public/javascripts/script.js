@@ -1,3 +1,11 @@
+/*const cloudinary = require('cloudinary');
+
+cloudinary.config({
+    cloud_name: "dipz4up0t",
+    api_key: "975787246228963",
+    api_secret: "37tJO_QAvGd9oBKUfIc9tX_WMOs"
+});*/
+
 function slider1() {
     var x = document.getElementById("bio");
     var y = document.getElementById("gallery");
@@ -17,14 +25,28 @@ function slider2() {
 }
 
 function readURL(input,imgPrev) {
-
+    var link = '';
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
             let im = document.getElementById(imgPrev);
+            console.log(e.target.result);
             im.src = e.target.result;
+            link = e.target.result;
             var elemento = document.getElementById(`${imgPrev}`);
-            
+            console.log(elemento);
+            console.log(link);
+
+            /*cloudinary.uploader.upload(e.target.result, 
+                function(result){
+                    console.log(result.url);
+                    im.src = result.url;
+                },
+                {transformation: [{width: 400, height: 400}
+            ]});*/
+
+            /*let per = document.getElementById('profileImage');
+            per.src = image.src;*/
             fadeIn(elemento,650);
 
             
@@ -32,18 +54,19 @@ function readURL(input,imgPrev) {
         }
         reader.readAsDataURL(input.files[0]);
     }
-
+    /*
     fetch('/dashboard/users', {
         method: 'GET'
     }).then(res => {return res.json()})
     .then(data => {
         console.log(data);
-    })
+    })*/
 
-    let form = document.userForm;
+    //let form = document.userForm;
+    let image = document.getElementById(imgPrev);
     let nam = document.getElementById('UserName').innerText;
     let data = {
-        profileImage: form.imagePreview2.src,
+        profileImage: image.src,
         name: nam
     };
     fetch('/dashboard/images', {
@@ -61,7 +84,7 @@ function readURL(input,imgPrev) {
             console.log('Data ok');
             console.log(data);
             let per = document.getElementsByName('profileImage');
-            per.src = form.imagePreview2.src;
+            per.src = image.src;
         }
     })
 
