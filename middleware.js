@@ -12,7 +12,7 @@ function addUser(req, res, next) {
     .then(user => {
       req.user = user;
       res.locals.user = user;
-      userController.create(user);
+      // userController.create(user);
       next();
     }).catch(err => {
       next(err);

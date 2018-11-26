@@ -25,8 +25,7 @@ userController.create = function(user){
 
         newUser.save(function(err){
             if(err){console.log('ERROR: Usuario ya existente')}
-            else{console.log('Usuario creado con exito');
-            }
+            else console.log(err);
         });
     }
 }
@@ -46,6 +45,7 @@ userController.updateImages = function(req,res){
     let update = {
         profileImage: req.body.profileImage   
     };
+    console.log(req.body.imgName);
     //req.files.image.path
     cloudinary.uploader.upload('./public/images/coast.jpg', 
         function (result) {
@@ -57,7 +57,7 @@ userController.updateImages = function(req,res){
     ]});
 
     console.log('antes de actualizar');
-    console.log(req.body);
+    console.log(`Body: ${req.body.profileImage}`);
     userSchema.findOneAndUpdate({name: req.body.name}, update, function(err,old){
         if(err){
             console.log('Error al actualizar');

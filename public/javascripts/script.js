@@ -30,12 +30,14 @@ function readURL(input,imgPrev) {
         var reader = new FileReader();
         reader.onload = function(e) {
             let im = document.getElementById(imgPrev);
-            console.log(e.target.result);
+            // console.log(e.target.result);
             im.src = e.target.result;
             link = e.target.result;
             var elemento = document.getElementById(`${imgPrev}`);
-            console.log(elemento);
-            console.log(link);
+
+            // console.log(reader.readAsText(e.target.files[0]));
+            // console.log(elemento);
+            // console.log(link);
 
             /*cloudinary.uploader.upload(e.target.result, 
                 function(result){
@@ -47,6 +49,7 @@ function readURL(input,imgPrev) {
 
             /*let per = document.getElementById('profileImage');
             per.src = image.src;*/
+            // console.log(e.target);
             fadeIn(elemento,650);
 
             
@@ -67,8 +70,10 @@ function readURL(input,imgPrev) {
     let nam = document.getElementById('UserName').innerText;
     let data = {
         profileImage: image.src,
-        name: nam
+        name: nam,
+        imgName:input.files[0].name
     };
+    // console.log(input.files[0].name);
     fetch('/dashboard/images', {
         method: 'PUT',
         body: JSON.stringify(data),
@@ -76,13 +81,13 @@ function readURL(input,imgPrev) {
             'Content-Type': 'application/json'
         }
     }).then(res => {
-        console.log('res ok');
+        // console.log('res ok');
         return res.json();
     })
     .then(data => {
         if(data.ok){
-            console.log('Data ok');
-            console.log(data);
+            // console.log('Data ok');
+            // console.log(data.update);
             let per = document.getElementsByName('profileImage');
             per.src = image.src;
         }
