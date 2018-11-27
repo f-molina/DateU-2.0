@@ -69,16 +69,19 @@ function readURL(input,imgPrev) {
     let image = document.getElementById(imgPrev);
     let nam = document.getElementById('UserName').innerText;
     let data = {
-        profileImage: image.src,
+        profileImage: image,
         name: nam,
         imgName:input.files[0].name
     };
-    // console.log(input.files[0].name);
+
+
+    frmData = new FormData();
+    frmData.append('file',input.files[0]);
     fetch('/dashboard/images', {
         method: 'PUT',
-        body: JSON.stringify(data),
+        body: frmData,
         headers: {
-            'Content-Type': 'application/json'
+            enctype:'multipart/form-data'
         }
     }).then(res => {
         // console.log('res ok');

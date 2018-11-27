@@ -3,6 +3,7 @@ const userSchema = require('../models/users');
 const userController = {};
 const cloudinary = require('cloudinary');
 
+
 cloudinary.config({
     cloud_name: "dipz4up0t",
     api_key: "975787246228963",
@@ -10,6 +11,7 @@ cloudinary.config({
 });
 
 userController.create = function(user){
+
     let data = {
         email: user.profile.email,
         name: user.profile.firstName,
@@ -47,22 +49,18 @@ userController.getOne = async(email)=>{
 }
 
 userController.updateImages = function(req,res){
+    
     let update = {
-        profileImage: req.body.profileImage   
+        profileImage: req.files[0].path  
     };
-    console.log(req.body.imgName);
-    //req.files.image.path
-    cloudinary.uploader.upload('./public/images/coast.jpg', 
+    cloudinary.uploader.upload(req.files[0].path, 
         function (result) {
-            console.log(`Resultado: ${result.url}`);
             update.profileImage = result.url;
         },
         {
             transformation: [{ width: 400, height: 400 }
     ]});
 
-    console.log('antes de actualizar');
-    console.log(`Body: ${req.body.profileImage}`);
     userSchema.findOneAndUpdate({name: req.body.name}, update, function(err,old){
         if(err){
             console.log('Error al actualizar');
