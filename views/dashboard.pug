@@ -42,9 +42,10 @@ html(lang='en')
                 img.rounded-circle.img-fluid(src='images/w7.jpg', alt='Profile pic', id='profileImage')
             .col-md-7.prof-info
               .pname.text-white
-                h6(name='UserName' id='UserName') #{user.profile.firstName}
-                h6 #{user.profile.edad}
+                h6(name='UserName' id='UserName') #{user.profile.firstName} #{user.profile.lastName}
+                h6 #{user.profile.edad} años
                 h6 #{user.profile.carrera}
+                h6(id='email') #{user.profile.email}
             .col-md-2.buttons.float-right.mt-3
               button.btn.btn-primary
                 i.fa.fa-bolt.mr-1

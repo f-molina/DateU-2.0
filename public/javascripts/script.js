@@ -1,11 +1,3 @@
-/*const cloudinary = require('cloudinary');
-
-cloudinary.config({
-    cloud_name: "dipz4up0t",
-    api_key: "975787246228963",
-    api_secret: "37tJO_QAvGd9oBKUfIc9tX_WMOs"
-});*/
-
 function slider1() {
     var x = document.getElementById("bio");
     var y = document.getElementById("gallery");
@@ -30,29 +22,11 @@ function readURL(input,imgPrev) {
         var reader = new FileReader();
         reader.onload = function(e) {
             let im = document.getElementById(imgPrev);
-            // console.log(e.target.result);
             im.src = e.target.result;
             link = e.target.result;
             var elemento = document.getElementById(`${imgPrev}`);
 
-            // console.log(reader.readAsText(e.target.files[0]));
-            // console.log(elemento);
-            // console.log(link);
-
-            /*cloudinary.uploader.upload(e.target.result, 
-                function(result){
-                    console.log(result.url);
-                    im.src = result.url;
-                },
-                {transformation: [{width: 400, height: 400}
-            ]});*/
-
-            /*let per = document.getElementById('profileImage');
-            per.src = image.src;*/
-            // console.log(e.target);
             fadeIn(elemento,650);
-
-            
 
         }
         reader.readAsDataURL(input.files[0]);
@@ -65,7 +39,7 @@ function readURL(input,imgPrev) {
         console.log(data);
     })*/
 
-    //let form = document.userForm;
+
     let image = document.getElementById(imgPrev);
     let nam = document.getElementById('UserName').innerText;
     let data = {
@@ -77,6 +51,7 @@ function readURL(input,imgPrev) {
 
     frmData = new FormData();
     frmData.append('file',input.files[0]);
+    frmData.append('emailUsr',document.getElementById('email').innerText);
     fetch('/dashboard/images', {
         method: 'PUT',
         body: frmData,
@@ -84,13 +59,10 @@ function readURL(input,imgPrev) {
             enctype:'multipart/form-data'
         }
     }).then(res => {
-        // console.log('res ok');
         return res.json();
     })
     .then(data => {
         if(data.ok){
-            // console.log('Data ok');
-            // console.log(data.update);
             let per = document.getElementsByName('profileImage');
             per.src = image.src;
         }

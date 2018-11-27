@@ -1,8 +1,7 @@
-const mongoose = require('mongoose');
 const userSchema = require('../models/users');
 const userController = {};
 const cloudinary = require('cloudinary');
-
+const fs = require('fs');
 
 cloudinary.config({
     cloud_name: "dipz4up0t",
@@ -49,34 +48,37 @@ userController.getOne = async(email)=>{
 }
 
 userController.updateImages = function(req,res){
-    
+    console.log(req.files);
     let update = {
         profileImage: req.files[0].path  
     };
+    console.log(update.profileImage);
     cloudinary.uploader.upload(req.files[0].path, 
         function (result) {
             update.profileImage = result.url;
+            userSchema.findOneAndUpdate({name: 'Edwin'}, update, function(err,old){
+                if(err){
+                    console.log('Error al actualizar');
+                    res.status(500);
+                    res.json({
+                        ok: false,
+                        err
+                    })
+                } else{
+                    console.log(old);
+                    res.json({
+                        ok: true,
+                        old, 
+                        update
+                    });
+                }
+            });
         },
         {
             transformation: [{ width: 400, height: 400 }
     ]});
+    fs.unlink(update.profileImage);
 
-    userSchema.findOneAndUpdate({name: req.body.name}, update, function(err,old){
-        if(err){
-            console.log('Error al actualizar');
-            res.status(500);
-            res.json({
-                ok: false,
-                err
-            })
-        } else{
-            res.json({
-                ok: true,
-                old, 
-                update
-            });
-        }
-    });
 }
 
 module.exports = userController;
