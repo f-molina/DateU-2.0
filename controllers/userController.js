@@ -41,6 +41,11 @@ userController.get = function(req,res){
     });
 }
 
+userController.getOne = async(email)=>{
+    const result = await userSchema.findOne({email:email});
+    return result;
+}
+
 userController.updateImages = function(req,res){
     let update = {
         profileImage: req.body.profileImage   

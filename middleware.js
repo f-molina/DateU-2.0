@@ -9,10 +9,12 @@ function addUser(req, res, next) {
   }
 
   auth.oktaClient.getUser(req.userinfo.sub)
-    .then(user => {
+    .then(async (user) => {
       req.user = user;
       res.locals.user = user;
-      // userController.create(user);
+      const userResult = await userController.getOne(user.profile.email);
+      if(!userResult)
+        userController.create(user);
       next();
     }).catch(err => {
       next(err);
