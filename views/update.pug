@@ -1,0 +1,64 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='stylesheet', href='styleupdate.css')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin='anonymous')
+    title Actualización de datos
+  body
+    .container
+      form(action='#')
+        .union
+          .parte1
+            .logo
+              i.fas.fa-user-circle
+            .label
+              label(for='name')
+                h4 Nombre
+            .texto
+              input#name.cuadros(type='text', name='name')
+          .parte1
+            .logo
+              i.fas.fa-user-friends
+            .label
+              label(for='apellido')
+                h4 Apellido
+            .texto
+              input#apellido.cuadros(type='text', name='apellido')
+          .parte1
+            .logo
+              i.fas.fa-user-graduate
+            .label
+              label(for='carrera')
+                h4 Carrera
+            .texto
+              input#carrera.cuadros(type='text', name='carrera')
+          .parte1
+            .logo
+              i.fas.fa-birthday-cake
+            .label
+              label(for='edad')
+                h4 Edad
+            .texto
+              input#edad.cuadros(type='text', name='edad')
+          .parte1
+            .logo
+              i.fas.fa-pen-square
+            .label
+              label(for='biografia')
+                h4 Biografía
+            .texto
+              textarea#biografia.cuadros(name='biografia', cols='22', rows='10')
+          .parte1
+            .logo
+              i.fab.fa-gratipay
+            .label
+              label(for='intereses')
+                h4 Intereses
+            .texto
+              textarea#intereses.cuadros(name='intereses', cols='22', rows='10')
+        button.boton
+          i.fas.fa-save
+          | Guardar Cambios
