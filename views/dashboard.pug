@@ -3,6 +3,7 @@ html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="stylesheet", href="styleupdate.css")
     // Font Awesome
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     // Bootstrap core CSS
@@ -15,45 +16,55 @@ html(lang='en')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css')
     link(href='https://fonts.googleapis.com/css?family=Josefin+Sans', rel='stylesheet')
     title Main
+
+    
   body
  
     #exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
       .modal-dialog(role='document')
         .modal-content
           .modal-header
-            h5#exampleModalLabel.modal-title Modal title
+            h5#exampleModalLabel.modal-title Actualización de datos
             button.close(type='button', data-dismiss='modal', aria-label='Close')
               span(aria-hidden='true') ×
           .modal-body
-            i.fas.fa-user-circle
-            label(for='name')
-              h4 Nombre
-            input#name.cuadros(type='text', name='name')
+            
+            .input-group
+              .input-group-prepend
+                i.fas.fa-user-circle
+                span.input-group-text(id='nombre')   Nombre
+              input.form-control(type='text')
             br
-            i.fas.fa-user-friends
-            label(for='apellido')
-              h4 Apellido
-            input#apellido.cuadros(type='text', name='apellido')
+            .input-group
+              .input-group-prepend
+                i.fas.fa-user-friends
+                span.input-group-text(id='apellido') Apellido
+              input.form-control(type='text')
             br
-            i.fas.fa-user-graduate
-            label(for='carrera')
-              h4 Carrera
-            input#carrera.cuadros(type='text', name='carrera')
+            .input-group
+              .input-group-prepend
+                i.fas.fa-birthday-cake
+                span.input-group-text(id='edad') Edad
+              input.form-control(type='text')
+            
             br
-            i.fas.fa-birthday-cake
-            label(for='edad')
-              h4 Edad
-            input#edad.cuadros(type='text', name='edad')
+            .input-group
+              .input-group-prepend
+                i.fas.fa-user-graduate
+                span.input-group-text(id='carrera') Carrera
+              input.form-control(type='text')
             br
-            i.fas.fa-pen-square
-            label(for='biografia')
-              h4 Biografía
-            textarea#biografia.cuadros(name='biografia', cols='22', rows='10')
+            .input-group
+              .input-group-prepend
+                i.fas.fa-pen-square
+                span.input-group-text(id='biografia') Biografía
+              input.form-control(type='text')
             br
-            i.fab.fa-gratipay
-            label(for='intereses')
-              h4 Intereses
-            textarea#intereses.cuadros(name='intereses', cols='22', rows='10')
+            .input-group
+              .input-group-prepend
+                i.fab.fa-gratipay
+                span.input-group-text(id='intereses') Intereses
+              input.form-control(type='text')
             br
           .modal-footer
             button.btn.btn-secondary(type='button', data-dismiss='modal') Close
