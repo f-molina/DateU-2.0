@@ -4,6 +4,7 @@ function slider1() {
     var y = document.getElementById("gallery");
     var z = document.getElementById("match");
     
+    
     if (y.style.display === "none" ) {
         y.style.display = "block";
         x.style.display = "none";
