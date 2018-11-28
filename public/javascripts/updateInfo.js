@@ -1,5 +1,15 @@
 var submit = document.getElementById('submit');
 var email = document.getElementById('email').innerText;
+var account = document.getElementById('account');
+
+account.addEventListener('click', ()=>{
+    document.getElementById('name').value = document.getElementById('UserName').innerText;
+    document.getElementById('lastname').value = document.getElementById('UserLastName').innerText;
+    document.getElementById('age').value = document.getElementById('UserAge').innerText;
+    document.getElementById('career').value = document.getElementById('UserCareer').innerText;
+    document.getElementById('description').value = document.getElementById('bio').innerText;
+    document.getElementById('hobbies').value = document.getElementById('hobs').innerText;
+});
 
 submit.addEventListener('click', ()=>{
     var hobbies = document.getElementById('hobbies').value;

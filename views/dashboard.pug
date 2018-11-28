@@ -89,7 +89,7 @@ html(lang='en')
             li.nav-item
               //a.nav-link(href='#') My account
               //a.nav-link(data-toggle='modal', data-target='#myModal', href='#') My account
-              a.nav-link( data-toggle='modal', data-target='#exampleModal') My account
+              a.nav-link( data-toggle='modal', data-target='#exampleModal' id='account') My account
               //button.btn.btn-primary(type='button', data-toggle='modal', data-target='#exampleModal')| Launch demo modal
             li.nav-item
               a.nav-link(href='#') Matches
@@ -105,9 +105,10 @@ html(lang='en')
                 img.rounded-circle.img-fluid(src='images/w7.jpg', alt='Profile pic', id='profileImage')
             .col-md-7.prof-info
               .pname.text-white
-                h6(name='UserName' id='UserName') #{user.profile.firstName} #{user.profile.lastName}
-                h6 #{user.profile.edad} años
-                h6 #{user.profile.carrera}
+                h6(name='UserName' id='UserName') #{user.profile.firstName} 
+                  span(id='UserLastName') #{user.profile.lastName}
+                h6(id='UserAge') #{user.profile.edad} años
+                h6(id='UserCareer') #{user.profile.carrera}
                 h6(id='email') #{user.profile.email}
             .col-md-2.buttons.float-right.mt-3
               button.btn.btn-primary
@@ -133,7 +134,7 @@ html(lang='en')
                   .col-12.col-lg-8.col-md-6
                     h3.display-4.mb-0.text-truncated Biografia
                     p.lead lorem
-                    p #{user.profile.biografia}
+                    p(id='bio') #{user.profile.biografia}
                   .col-12.col-lg-4.col-md-6.text-center
                     img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='')
                 // /row
@@ -172,7 +173,7 @@ html(lang='en')
             .card
               .card-body
                 h3.display-4.mb-0.text-truncated Intereses
-                p #{user.profile.intereses}
+                p(id='hobs') #{user.profile.intereses}
         // end secondrow div arriba
       #gallery.container.gallery.mt-5(style='display: none;')
         .row
