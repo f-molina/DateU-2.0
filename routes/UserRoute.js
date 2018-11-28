@@ -13,4 +13,6 @@ router.get('/users',UserController.get);
 //Update
 router.put('/images', upload.any(), UserController.updateImages);
 
+router.post('/updateInfo', UserController.updateInfo);
+
 module.exports = router;

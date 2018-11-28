@@ -34,21 +34,21 @@ html(lang='en')
                 i.fas.fa-user-circle(style='padding-top: 8px;padding-right: 5px;')
 
                 span#nombre.input-group-text(style='\ width: 7vw;\ ')   Nombre
-              input.form-control(type='text')
+              input#name.form-control(type='text')
             br
             .input-group
               .input-group-prepend
                 i.fas.fa-user-friends(style='padding-top: 8px;padding-right: 5px;')
 
                 span#apellido.input-group-text(style='\ width: 7vw;\ ')  Apellido
-              input.form-control(type='text')
+              input#lastname.form-control(type='text')
             br
             .input-group
               .input-group-prepend
                 i.fas.fa-birthday-cake(style='padding-top: 8px;padding-right: 5px;')
 
                 span#edad.input-group-text(style='\ width: 7vw;\ ')   Edad
-              input.form-control(type='text')
+              input#age.form-control(type='text')
             
             br
             .input-group
@@ -56,25 +56,25 @@ html(lang='en')
                 i.fas.fa-user-graduate(style='padding-top: 8px;padding-right: 5px;')
 
                 span#carrera.input-group-text(style='\ width: 7vw;\ ')   Carrera
-              input.form-control(type='text')
+              input#career.form-control(type='text')
             br
             .input-group
               .input-group-prepend
                 i.fas.fa-pen-square(style='padding-top: 8px;padding-right: 5px;')
 
                 span#biografia.input-group-text(style='\ width: 7vw;\ ')   Biografía
-              input.form-control(type='text')
+              input#description.form-control(type='text')
             br
             .input-group
               .input-group-prepend
                 i.fab.fa-gratipay(style='padding-top: 8px;padding-right: 5px;')
 
                 span#intereses.input-group-text(style='\ width: 7vw;\ ')   Intereses
-              input.form-control(type='text')
+              input#hobbies.form-control(type='text')
             br
           .modal-footer
             button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-            button.btn.btn-primary(type='button') Save changes
+            button.btn.btn-primary(type='button' id="submit") Save changes
 
     h1= pics
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
@@ -233,5 +233,6 @@ html(lang='en')
     // Baguette gallery
     script(src='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js')
     script(src='/javascripts/script.js')
+    script(src='/javascripts/updateInfo.js')
     script.
       baguetteBox.run('.gallery');
