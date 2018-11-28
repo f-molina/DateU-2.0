@@ -63,7 +63,8 @@ userController.updateImages = function(req,res){
     cloudinary.uploader.upload(req.files[0].path, 
         function (result) {
             update.profileImage = result.url;
-            userSchema.findOneAndUpdate({name: 'Edwin'}, update, function(err,old){
+            console.log(req.user.profile.email);
+            userSchema.findOneAndUpdate({email: req.user.profile.email}, update, function(err,old){
                 if(err){
                     console.log('Error al actualizar');
                     res.status(500);

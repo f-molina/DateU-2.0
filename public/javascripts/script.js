@@ -51,7 +51,7 @@ function readURL(input,imgPrev) {
 
     frmData = new FormData();
     frmData.append('file',input.files[0]);
-    frmData.append('emailUsr',document.getElementById('email').innerText);
+    // frmData.append('emailUsr',document.getElementById('email').innerText);
     fetch('/dashboard/images', {
         method: 'PUT',
         body: frmData,
@@ -120,4 +120,3 @@ function fadeIn(el, time) {
   
     tick();
   }
-  
