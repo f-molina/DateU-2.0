@@ -134,7 +134,7 @@ html(lang='en')
                   .col-12.col-lg-8.col-md-6
                     h3.display-4.mb-0.text-truncated Biografia
                     p.lead lorem
-                    p(id='bio') #{user.profile.biografia}
+                    p(id='biog') #{user.profile.biografia}
                   .col-12.col-lg-4.col-md-6.text-center
                     img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='')
                 // /row
@@ -185,7 +185,7 @@ html(lang='en')
                     label(for='imageUpload1')
                   .avatar-preview
                     a.lightbox(href='images/w7.jpg')
-                      img#imagePreview1(src='images/w7.jpg')
+                      img#imagePreview1(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414112/bb6sgtkeedvgkrmfta3x.jpg')
           .col-sm-6.col-md-4.gal-item
             .box
                 .avatar-upload
@@ -194,7 +194,7 @@ html(lang='en')
                     label(for='imageUpload2')
                   .avatar-preview
                     a.lightbox(href='images/w2.jpg')
-                      img#imagePreview2(src='images/w2.jpg' name='imagePreview2')
+                      img#imagePreview2(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414103/j718wga5dtkrcaolndqa.jpg' name='imagePreview2')
           .col-sm-6.col-md-4.gal-item
             .box
                 .avatar-upload
@@ -203,7 +203,7 @@ html(lang='en')
                     label(for='imageUpload3')
                   .avatar-preview
                     a.lightbox(href='images/w3.jpg')
-                      img#imagePreview3(src='images/w3.jpg')
+                      img#imagePreview3(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414100/hhxtwpqssz30sw1lb1ur.jpg')
           .col-sm-6.col-md-4.gal-item
             .box
                 .avatar-upload
@@ -212,7 +212,7 @@ html(lang='en')
                     label(for='imageUpload4')
                   .avatar-preview
                     a.lightbox(href='images/benches.jpg')
-                      img#imagePreview4(src='images/benches.jpg')
+                      img#imagePreview4(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414092/ijh0etajxjdpfxkh8zj9.jpg')
           .col-sm-6.col-md-4.gal-item
             .box
                 .avatar-upload
@@ -221,7 +221,16 @@ html(lang='en')
                     label(for='imageUpload5')
                   .avatar-preview
                     a.lightbox(href='images/park.jpg')
-                      img#imagePreview5(src='images/park.jpg')
+                      img#imagePreview5(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414082/lpxwmpbz6qmpog8gsngc.jpg')
+          .col-sm-6.col-md-4.gal-item
+            .box
+                .avatar-upload
+                  .avatar-edit
+                    input#imageUpload6(type='file', accept='.png, .jpg, .jpeg')
+                    label(for='imageUpload6')
+                  .avatar-preview
+                    a.lightbox(href='images/park.jpg')
+                      img#imagePreview6(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414057/ho7sov8lc4vmdid3gwjf.jpg')
     // Scripts
     // JQuery
     script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')

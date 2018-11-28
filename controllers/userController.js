@@ -20,12 +20,12 @@ userController.create = function(user){
         description: 'Student',
         hobbies: 'Study',
         profileImage: 'images/w7.jpg',
-        image1:'images/w7.jpg',
-        image2:'images/w7.jpg',
-        image3:'images/w7.jpg',
-        image4:'images/w7.jpg',
-        image5:'images/w7.jpg',
-        image6:'images/w7.jpg',
+        image1:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414112/bb6sgtkeedvgkrmfta3x.jpg',
+        image2:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414103/j718wga5dtkrcaolndqa.jpg',
+        image3:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414100/hhxtwpqssz30sw1lb1ur.jpg',
+        image4:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414092/ijh0etajxjdpfxkh8zj9.jpg',
+        image5:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414082/lpxwmpbz6qmpog8gsngc.jpg',
+        image6:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414057/ho7sov8lc4vmdid3gwjf.jpg'
     }
 
     if(data.email!='' && data.name!='' && data.age!='' && data.career!=''){

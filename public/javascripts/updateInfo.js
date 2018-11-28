@@ -7,7 +7,7 @@ account.addEventListener('click', ()=>{
     document.getElementById('lastname').value = document.getElementById('UserLastName').innerText;
     document.getElementById('age').value = document.getElementById('UserAge').innerText;
     document.getElementById('career').value = document.getElementById('UserCareer').innerText;
-    document.getElementById('description').value = document.getElementById('bio').innerText;
+    document.getElementById('description').value = document.getElementById('biog').innerText;
     document.getElementById('hobbies').value = document.getElementById('hobs').innerText;
 });
 
