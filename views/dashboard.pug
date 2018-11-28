@@ -233,40 +233,41 @@ html(lang='en')
                     a.lightbox(href='images/park.jpg')
                       img#imagePreview6(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414057/ho7sov8lc4vmdid3gwjf.jpg')
 
-      #mat(style='display: grid; grid-template-columns:40% 30% 30%; margin:auto; ')
-        div
-          #match(style='width: 15rem;display:none; margin:auto ')
-            img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='Card image cap')
-            .card-body
-              h5.card-title #{user.profile.firstName} #{user.profile.lastName}
-              p(id='bio') #{user.profile.biografia}
-            ul.list-group.list-group-flush
-              li.list-group-item #{user.profile.edad}
-              li.list-group-item  #{user.profile.carrera}
-              li.list-group-item  #{user.profile.intereses}
-            br
-        div(style='width:15rem;')
-          #match
-            img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='Card image cap')
-            .card-body
-              h5.card-title #{user.profile.firstName} #{user.profile.lastName}
-              p(id='bio') #{user.profile.biografia}
-            ul.list-group.list-group-flush
-              li.list-group-item #{user.profile.edad}
-              li.list-group-item  #{user.profile.carrera}
-              li.list-group-item  #{user.profile.intereses}
-            br
-        div(style='width:15rem;')
-          #match
-            img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='Card image cap')
-            .card-body
-              h5.card-title #{user.profile.firstName} #{user.profile.lastName}
-              p(id='bio') #{user.profile.biografia}
-            ul.list-group.list-group-flush
-              li.list-group-item #{user.profile.edad}
-              li.list-group-item  #{user.profile.carrera}
-              li.list-group-item  #{user.profile.intereses}
-            br
+      #mat(style='display:none;')
+        #matches(style='display: grid; grid-template-columns:40% 30% 30%; margin:auto; ')
+          div
+            #match(style='width: 15rem; margin:auto ')
+              img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='Card image cap')
+              .card-body
+                h5.card-title #{user.profile.firstName} #{user.profile.lastName}
+                p(id='bio') #{user.profile.biografia}
+              ul.list-group.list-group-flush
+                li.list-group-item #{user.profile.edad}
+                li.list-group-item  #{user.profile.carrera}
+                li.list-group-item  #{user.profile.intereses}
+              br
+          div(style='width:15rem;')
+            #match
+              img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='Card image cap')
+              .card-body
+                h5.card-title #{user.profile.firstName} #{user.profile.lastName}
+                p(id='bio') #{user.profile.biografia}
+              ul.list-group.list-group-flush
+                li.list-group-item #{user.profile.edad}
+                li.list-group-item  #{user.profile.carrera}
+                li.list-group-item  #{user.profile.intereses}
+              br
+          div(style='width:15rem;')
+            #match
+              img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='Card image cap')
+              .card-body
+                h5.card-title #{user.profile.firstName} #{user.profile.lastName}
+                p(id='bio') #{user.profile.biografia}
+              ul.list-group.list-group-flush
+                li.list-group-item #{user.profile.edad}
+                li.list-group-item  #{user.profile.carrera}
+                li.list-group-item  #{user.profile.intereses}
+              br
           
     
     

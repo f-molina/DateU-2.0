@@ -2,7 +2,7 @@
 function slider1() {
     var x = document.getElementById("bio");
     var y = document.getElementById("gallery");
-    var z = document.getElementById("match");
+    var z = document.getElementById("mat");
     
     
     if (y.style.display === "none" ) {
@@ -15,7 +15,7 @@ function slider1() {
 function slider2() {
     var x = document.getElementById("bio");
     var y = document.getElementById("gallery");
-    var z = document.getElementById("match");
+    var z = document.getElementById("mat");
     
     if (x.style.display === "none" ) {
         x.style.display = "block";
@@ -27,7 +27,7 @@ function slider2() {
 function slider3() {
     var x = document.getElementById("bio");
     var y = document.getElementById("gallery");
-    var z = document.getElementById("match");
+    var z = document.getElementById("mat");
 
     if ( z.style.display==="none") {
         z.style.display = "block";
