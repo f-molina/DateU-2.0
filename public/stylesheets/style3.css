@@ -186,3 +186,12 @@
 #exampleModal .nombres{
     width: 7.6vw;
 }
+
+.scrolling{
+    overflow-y: scroll;
+    height: 60vh;
+}
+
+.text-sug{
+    font-size: 2em;
+}

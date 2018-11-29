@@ -1,40 +1,25 @@
 
 function slider1() {
-    var x = document.getElementById("bio");
-    var y = document.getElementById("gallery");
-    var z = document.getElementById("mat");
+    var y = document.getElementById("bio");
+    var x = document.getElementById("gallery");
     
     
     if (y.style.display === "none" ) {
         y.style.display = "block";
         x.style.display = "none";
-        z.style.display= "none";
     }
 }
 
 function slider2() {
-    var x = document.getElementById("bio");
-    var y = document.getElementById("gallery");
-    var z = document.getElementById("mat");
+    var y = document.getElementById("bio");
+    var x = document.getElementById("gallery");
     
     if (x.style.display === "none" ) {
         x.style.display = "block";
         y.style.display = "none";
-        z.style.display= "none";
     }
 }
 
-function slider3() {
-    var x = document.getElementById("bio");
-    var y = document.getElementById("gallery");
-    var z = document.getElementById("mat");
-
-    if ( z.style.display==="none") {
-        z.style.display = "block";
-        y.style.display = "none";
-        x.style.display = "none";
-    }
-}
 function readURL(input,imgPrev) {
     var link = '';
     if (input.files && input.files[0]) {

@@ -35,15 +35,16 @@ html(lang='en')
               .input-group-prepend
                 i.fas.fa-birthday-cake(style='padding-top: 8px;padding-right: 5px;')
 
-                span#edad.nombres.input-group-text   Edad
+                span#edad.nombres.input-group-text(style='\ width: 7vw;\ ')   Edad
               input#age.form-control(type='text')
             
             br
+
             .input-group
               .input-group-prepend
                 i.fab.fa-gratipay(style='padding-top: 8px;padding-right: 5px;')
 
-                span#estado.nombres.input-group-text   Estado Civil
+                span#edad.nombres.input-group-text(style='\ width: 7vw;\ ')   Estado Civil
               input#marital.form-control(type='text')
             
             br
@@ -51,22 +52,21 @@ html(lang='en')
               .input-group-prepend
                 i.fas.fa-user-graduate(style='padding-top: 8px;padding-right: 5px;')
 
-                span#carrera.nombres.input-group-text   Carrera
+                span#carrera.nombres.input-group-text(style='\ width: 7vw;\ ')   Carrera
               input#career.form-control(type='text')
             br
             .input-group
               .input-group-prepend
                 i.fas.fa-pen-square(style='padding-top: 8px;padding-right: 5px;')
 
-                span#biografia.nombres.input-group-text  Biografía
+                span#biografia.nombres.input-group-text(style='\ width: 7vw;\ ')   Biografía
               input#description.form-control(type='text')
             br
             .input-group
               .input-group-prepend
-                i.far.fa-list-alt(style='padding-top: 8px;padding-right: 5px;')
-                
+                i.fab.fa-gratipay(style='padding-top: 8px;padding-right: 5px;')
 
-                span#intereses.nombres.input-group-text   Intereses
+                span#intereses.nombres.input-group-text(style='\ width: 7vw;\ ')   Intereses
               input#hobbies.form-control(type='text')
             br
           .modal-footer
@@ -86,10 +86,8 @@ html(lang='en')
             li.nav-item
               //a.nav-link(href='#') My account
               //a.nav-link(data-toggle='modal', data-target='#myModal', href='#') My account
-              a.nav-link( data-toggle='modal', data-target='#exampleModal' id='account') My account
+              a.nav-link( data-toggle='modal', data-target='#exampleModal' id='account') Settings
               //button.btn.btn-primary(type='button', data-toggle='modal', data-target='#exampleModal')| Launch demo modal
-            li.nav-item
-              a.nav-link(href='#') Matches
             li.nav-item
               a.nav-link(href='/users/logout') Sign out
     form(action='#' name='userForm')
@@ -99,7 +97,7 @@ html(lang='en')
           .row
             .col-md-3
               .mainb
-                img.rounded-circle.img-fluid(src='images/w7.jpg', alt='Profile pic', id='profileImage')
+                img.rounded-circle.img-fluid(src='images/icon.png ', alt='Profile pic', id='profileImage')
             .col-md-7.prof-info
               .pname.text-white
                 h6(name='UserName' id='UserName') #{user.profile.firstName} 
@@ -108,73 +106,38 @@ html(lang='en')
                 h6(id='UserMarital') Single
                 h6(id='UserCareer') #{user.profile.carrera}
                 h6(id='email') #{user.profile.email}
-            .col-md-2.buttons.float-right.mt-3
-              button.btn.btn-primary
-                i.fa.fa-bolt.mr-1
-                | SL
-              button.btn.btn-primary
-                i.fas.fa-heart.mr-1
-                | CF
-              button.btn.btn-primary
-                i.fab.fa-rocketchat.mr-1
-                | CH
       .container
         ul.filter.controls
-          li(onclick='slider2()') Bio
-          li(onclick='slider1()') Pictures
-          li(onclick='slider3()') Matches
+          li(onclick='slider2()') Pictures
+          li(onclick='slider1()') Profile
         hr.hr-dark
-      #bio.container
+      #bio.container(style='display: none;')
         .row.my-5
-          .col-md-6
+          .col-md-6            
             .card
               .card-body
                 .row
                   .col-12.col-lg-8.col-md-6
-                    h3.display-4.mb-0.text-truncated Biografia
-                    p.lead lorem
+                    h3.display-4.mb-0.text-truncated.mb-3 Biografia
                     p(id='biog') #{user.profile.biografia}
-                  .col-12.col-lg-4.col-md-6.text-center
-                    img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='')
+                  .col-12.mt-5
+                    h3.display-4.mb-0.text-truncated.mb-3 Intereses
+                    p(id='hobs') #{user.profile.intereses}
                 // /row
                 // /card-block
-          .col-md-2.text-center.stats
-            .card
-              .card-body
-                h3.mb-0 100K
-                small stats
-              // /card-block
-          .col-md-2.text-center.stats
-            .card
-              .card-body
-                h3.mb-0 100K
-                small stats
-              // /card-block
-          .col-md-2.text-center.stats
-            .card
-              .card-body
-                h3.mb-0 100k
-                small stats
-              // /card-block
-              // end rowmain div de abajo
-        .row.my-5
-          .col-md-6
-            .card
-              .card-body
-                .row.text-center
-                  .col-md-4.secrowicons
-                    i.fas.fa-bolt
-                  .col-md-4.secrowicons
-                    i.fas.fa-heart
-                  .col-md-4.secrowicons
-                    i.fas.fa-comment
-          .col-md-6
-            .card
-              .card-body
-                h3.display-4.mb-0.text-truncated Intereses
-                p(id='hobs') #{user.profile.intereses}
-        // end secondrow div arriba
-      #gallery.container.gallery.mt-5(style='display: none;')
+          .col-md-6.scrolling
+            h6 Suggested People
+            each u in users
+              .card.mb-5
+                .card-body
+                  .row
+                    .col-12.col-lg-8.col-md-6
+                      h3.display-4.mb-0.text-truncated.text-sug.mb-3 #{u.name} #{u.lastname}
+                      p(id='biog') #{u.description}
+                    .col-12.col-lg-4.col-md-6.text-center
+                      img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='')
+                        
+      #gallery.container.gallery.mt-5
         .row
           .col-sm-12.col-md-4.gal-item
             .box
@@ -229,25 +192,10 @@ html(lang='en')
                     label(for='imageUpload6')
                   .avatar-preview
                     a.lightbox(href='images/park.jpg')
-                      img#imagePreview6(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414057/ho7sov8lc4vmdid3gwjf.jpg')
-
-      #mat(style='display:none;')
-        #matches(style='display: grid; grid-template-columns:40% 30% 30%; margin:auto; ')
-          each u in users
-            div(style='width:15rem;')
-              #match(style='width: 15rem; margin:auto ')
-                img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='Card image cap')
-                .card-body
-                  h5.card-title #{u.name} #{u.lastname}
-                  p(id='bio') #{u.description}
-                ul.list-group.list-group-flush
-                  li.list-group-item #{u.age}
-                  li.list-group-item  #{u.career}
-                  li.list-group-item  #{u.hobbies}
-                br
+                      img#imagePreview6(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414057/ho7sov8lc4vmdid3gwjf.jpg')   
       button.btn.pmd-btn-fab.pmd-btn-raised.pmd-ripple-effect.btn-default(type='button')
         a(href='/chat')
-          i.fas.fa-comment-alt          
+          i.fas.fa-comment-alt              
           
     
     
