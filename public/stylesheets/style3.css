@@ -24,6 +24,14 @@
     .prof-info{
         padding: 1em;
     }
+    
+}
+
+@media screen and (max-width: 1250px) {
+    
+    .nombres{
+        display:none;
+    }
 }
 
 
@@ -173,4 +181,8 @@
     position: fixed;
     margin: 1em;
     right: 0; 
+}
+
+#exampleModal .nombres{
+    width: 7.6vw;
 }

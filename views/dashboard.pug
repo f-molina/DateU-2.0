@@ -29,25 +29,21 @@ html(lang='en')
               span(aria-hidden='true') ×
           .modal-body
             
-            .input-group
-              .input-group-prepend
-                i.fas.fa-user-circle(style='padding-top: 8px;padding-right: 5px;')
-
-                span#nombre.input-group-text(style='\ width: 7vw;\ ')   Nombre
-              input#name.form-control(type='text')
-            br
-            .input-group
-              .input-group-prepend
-                i.fas.fa-user-friends(style='padding-top: 8px;padding-right: 5px;')
-
-                span#apellido.input-group-text(style='\ width: 7vw;\ ')  Apellido
-              input#lastname.form-control(type='text')
-            br
+            
+            
             .input-group
               .input-group-prepend
                 i.fas.fa-birthday-cake(style='padding-top: 8px;padding-right: 5px;')
 
-                span#edad.input-group-text(style='\ width: 7vw;\ ')   Edad
+                span#edad.nombres.input-group-text   Edad
+              input#age.form-control(type='text')
+            
+            br
+            .input-group
+              .input-group-prepend
+                i.fab.fa-gratipay(style='padding-top: 8px;padding-right: 5px;')
+
+                span#estado.nombres.input-group-text   Estado Civil
               input#age.form-control(type='text')
             
             br
@@ -55,21 +51,22 @@ html(lang='en')
               .input-group-prepend
                 i.fas.fa-user-graduate(style='padding-top: 8px;padding-right: 5px;')
 
-                span#carrera.input-group-text(style='\ width: 7vw;\ ')   Carrera
+                span#carrera.nombres.input-group-text   Carrera
               input#career.form-control(type='text')
             br
             .input-group
               .input-group-prepend
                 i.fas.fa-pen-square(style='padding-top: 8px;padding-right: 5px;')
 
-                span#biografia.input-group-text(style='\ width: 7vw;\ ')   Biografía
+                span#biografia.nombres.input-group-text  Biografía
               input#description.form-control(type='text')
             br
             .input-group
               .input-group-prepend
-                i.fab.fa-gratipay(style='padding-top: 8px;padding-right: 5px;')
+                i.far.fa-list-alt(style='padding-top: 8px;padding-right: 5px;')
+                
 
-                span#intereses.input-group-text(style='\ width: 7vw;\ ')   Intereses
+                span#intereses.nombres.input-group-text   Intereses
               input#hobbies.form-control(type='text')
             br
           .modal-footer
