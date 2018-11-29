@@ -1,3 +1,6 @@
+/* Propeller button */
+@import "http://propeller.in/components/button/css/button.css";
+
 .rgba-gradient {
     background: -moz-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
     background: -webkit-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
@@ -163,4 +166,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.pmd-btn-fab {
+    bottom: 0;
+    position: fixed;
+    margin: 1em;
+    right: 0; 
 }

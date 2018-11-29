@@ -48,17 +48,26 @@ app.use(auth.oidc.router);
 app.use(middleware.addUser);
 
 io.on('connection', (socket)=>{
-  console.log('New user connected');
+  console.log('usuario conectado');
 
   socket.on('disconnect', function () {
-    console.log('user disconnected');
+    console.log('usuario desconectado');
   });
 
-  socket.on('chat message', function (msg) {
-    console.log('Entrando a chat message Server');
-    io.emit('chat message', msg);
-    console.log('Saliendo de chat message Server');
-  });
+  //usuario por defecto
+	socket.username = "anonimo";
+
+  socket.on('change_username', (data) => {
+      socket.username = data.username;
+  })
+
+  socket.on('new_message', (data) => {
+      io.sockets.emit('new_message', {message : data.message, username : socket.username});
+  })
+
+  socket.on('typing', (data) => {
+    socket.broadcast.emit('typing', {username : socket.username});
+  })
 
 });
 
