@@ -4,6 +4,7 @@ const logger = require("morgan");
 const path = require("path");
 const session = require("express-session");
 const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo')(session);
 //const io = require("socket.io").listen(Server);
 mongoose.connect("mongodb://hola:hola1234@ds161901.mlab.com:61901/web", {useNewUrlParser: true});
 
@@ -41,7 +42,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(session({
   secret: 'Atlf57Tj1BKhzexk0gsQj5YVr6hbuaEJ1MFgHVZYFxYHMJUjwXWvNP7AJo3z50aL',
   resave: true,
-  saveUninitialized: false
+  saveUninitialized: false,
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
 app.use(auth.oidc.router);
