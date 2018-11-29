@@ -3,8 +3,7 @@ var email = document.getElementById('email').innerText;
 var account = document.getElementById('account');
 
 account.addEventListener('click', ()=>{
-    document.getElementById('name').value = document.getElementById('UserName').innerText;
-    document.getElementById('lastname').value = document.getElementById('UserLastName').innerText;
+    document.getElementById('marital').value = document.getElementById('UserMarital').innerText;
     document.getElementById('age').value = document.getElementById('UserAge').innerText;
     document.getElementById('career').value = document.getElementById('UserCareer').innerText;
     document.getElementById('description').value = document.getElementById('biog').innerText;
@@ -13,17 +12,15 @@ account.addEventListener('click', ()=>{
 
 submit.addEventListener('click', ()=>{
     var hobbies = document.getElementById('hobbies').value;
-    var name = document.getElementById('name').value;
-    var lastname = document.getElementById('lastname').value;
     var age = document.getElementById('age').value;
     var description = document.getElementById('description').value;
     var career = document.getElementById('career').value;
+    var marital = document.getElementById('marital').value;
     
     let data = {
-        name: name,
-        lastname: lastname,
         age: age,
         career: career,
+        marital: marital,
         description: description,
         hobbies: hobbies,
         email: email

@@ -16,9 +16,10 @@ userController.create = function(user){
         name: user.profile.firstName,
         lastname: user.profile.lastName,
         age: 18,
-        career: 'Pregrado',
+        career: 'Computer Science',
         description: 'Student',
         hobbies: 'Study',
+        marital: 'Single',
         profileImage: 'images/w7.jpg',
         image1:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414112/bb6sgtkeedvgkrmfta3x.jpg',
         image2:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414103/j718wga5dtkrcaolndqa.jpg',
@@ -92,10 +93,9 @@ userController.updateImages = function(req,res){
 userController.updateInfo = function(req,res){
     console.log(`email: ${req.body.email}`);
     let update = {
-        name: req.body.name,
-        lastname: req.body.lastname,
         age: req.body.age,
         career: req.body.career,
+        marital: req.body.marital,
         description: req.body.description,
         hobbies: req.body.hobbies
     }

@@ -10,6 +10,7 @@ var userSchema = new mongoose.Schema({
     career: String,
     description: String,
     hobbies: String,
+    marital: String,
     profileImage: String,
     image1:String,
     image2:String,

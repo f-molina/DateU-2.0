@@ -44,7 +44,7 @@ html(lang='en')
                 i.fab.fa-gratipay(style='padding-top: 8px;padding-right: 5px;')
 
                 span#estado.nombres.input-group-text   Estado Civil
-              input#age.form-control(type='text')
+              input#marital.form-control(type='text')
             
             br
             .input-group
@@ -105,6 +105,7 @@ html(lang='en')
                 h6(name='UserName' id='UserName') #{user.profile.firstName} 
                   span(id='UserLastName') #{user.profile.lastName}
                 h6(id='UserAge') #{user.profile.edad} años
+                h6(id='UserMarital') Single
                 h6(id='UserCareer') #{user.profile.carrera}
                 h6(id='email') #{user.profile.email}
             .col-md-2.buttons.float-right.mt-3
