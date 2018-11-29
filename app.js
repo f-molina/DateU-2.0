@@ -18,7 +18,7 @@ const usersRouter = require("./routes/users");
 const userChat = require("./routes/chat");
 const UserRoutes = require('./routes/UserRoute');
 
-var port = 3000;
+var port = process.env.PORT ||  3000;
 var http = require('http');
 
 
