@@ -124,7 +124,7 @@ html(lang='en')
         ul.filter.controls
           li(onclick='slider2()') Bio
           li(onclick='slider1()') Pictures
-          li(onclick='slider3()') Pictures
+          li(onclick='slider3()') Matches
         hr.hr-dark
       #bio.container
         .row.my-5
@@ -235,39 +235,18 @@ html(lang='en')
 
       #mat(style='display:none;')
         #matches(style='display: grid; grid-template-columns:40% 30% 30%; margin:auto; ')
-          div
-            #match(style='width: 15rem; margin:auto;')
-              img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='Card image cap')
-              .card-body
-                h5.card-title #{user.profile.firstName} #{user.profile.lastName}
-                p(id='bio') #{user.profile.biografia}
-              ul.list-group.list-group-flush
-                li.list-group-item #{user.profile.edad}
-                li.list-group-item  #{user.profile.carrera}
-                li.list-group-item  #{user.profile.intereses}
-              br
-          div(style='width:15rem;')
-            #match
-              img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='Card image cap')
-              .card-body
-                h5.card-title #{user.profile.firstName} #{user.profile.lastName}
-                p(id='bio') #{user.profile.biografia}
-              ul.list-group.list-group-flush
-                li.list-group-item #{user.profile.edad}
-                li.list-group-item  #{user.profile.carrera}
-                li.list-group-item  #{user.profile.intereses}
-              br
-          div(style='width:15rem;')
-            #match
-              img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='Card image cap')
-              .card-body
-                h5.card-title #{user.profile.firstName} #{user.profile.lastName}
-                p(id='bio') #{user.profile.biografia}
-              ul.list-group.list-group-flush
-                li.list-group-item #{user.profile.edad}
-                li.list-group-item  #{user.profile.carrera}
-                li.list-group-item  #{user.profile.intereses}
-              br
+          each u in users
+            div(style='width:15rem;')
+              #match(style='width: 15rem; margin:auto ')
+                img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='Card image cap')
+                .card-body
+                  h5.card-title #{u.name} #{u.lastname}
+                  p(id='bio') #{u.description}
+                ul.list-group.list-group-flush
+                  li.list-group-item #{u.age}
+                  li.list-group-item  #{u.career}
+                  li.list-group-item  #{u.hobbies}
+                br
           
     
     
