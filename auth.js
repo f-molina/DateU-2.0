@@ -13,7 +13,7 @@ const oidc = new ExpressOIDC({
   issuer: "https://dev-269919.oktapreview.com/oauth2/default",
   client_id: "0oah374pqlsvtrldG0h7",
   client_secret: "AYClrlztR1X0IzCuHY0nTBCgG71nKT70so4DhjEc",
-  redirect_uri: "http://localhost:3000/users/callback",
+  redirect_uri: "https://date-u.herokuapp.com/users/callback",
   scope: "openid profile",
   routes: {
     login: {
