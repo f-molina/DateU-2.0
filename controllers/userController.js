@@ -4,9 +4,9 @@ const cloudinary = require('cloudinary');
 const fs = require('fs');
 
 cloudinary.config({
-    cloud_name: "dipz4up0t",
-    api_key: "975787246228963",
-    api_secret: "37tJO_QAvGd9oBKUfIc9tX_WMOs"
+    cloud_name: "dpy1otezb",
+    api_key: "592256824217983",
+    api_secret: "NvaGrTdN80byO9o4LSKqNO2r-yE"
 });
 
 userController.create = function(user){
@@ -20,7 +20,7 @@ userController.create = function(user){
         description: 'Student',
         hobbies: 'Study',
         marital: 'Single',
-        profileImage: 'images/icon.png',
+        profileImage: 'http://res.cloudinary.com/dipz4up0t/image/upload/v1543595432/d16czhaff7taykhlzlsp.png',
         photos:[
             'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414112/bb6sgtkeedvgkrmfta3x.jpg',
             'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414103/j718wga5dtkrcaolndqa.jpg',
