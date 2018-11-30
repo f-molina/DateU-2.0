@@ -20,9 +20,20 @@ function slider2() {
     }
 }
 
-function readURL(input,imgPrev) {
-    var link = '';
+function readURL(input,imgPrev,oldUrl) {
+    
     if (input.files && input.files[0]) {
+        var img = new Image();
+
+        img.src = window.URL.createObjectURL( input.files[0] );
+        img.onload = function() 
+        {
+            var width = img.naturalWidth,
+                height = img.naturalHeight;
+                
+          console.log ("Image Width: " + width);
+          console.log ("Image Height: " +height);
+        };
         var reader = new FileReader();
         reader.onload = function(e) {
             let im = document.getElementById(imgPrev);
@@ -34,69 +45,61 @@ function readURL(input,imgPrev) {
 
         }
         reader.readAsDataURL(input.files[0]);
+        frmData = new FormData();
+        frmData.append('file',input.files[0]);
+        frmData.append('oldUrl',oldUrl);
+        // frmData.append('emailUsr',document.getElementById('email').innerText);
+        fetch('/dashboard/images', {
+            method: 'PUT',
+            body: frmData,
+            headers: {
+                enctype:'multipart/form-data'
+            }
+        }).then(res => {
+            
+        })
     }
-    /*
-    fetch('/dashboard/users', {
-        method: 'GET'
-    }).then(res => {return res.json()})
-    .then(data => {
-        console.log(data);
-    })*/
-
-
-    let image = document.getElementById(imgPrev);
-    let nam = document.getElementById('UserName').innerText;
-    let data = {
-        profileImage: image,
-        name: nam,
-        imgName:input.files[0].name
-    };
-
-
-    frmData = new FormData();
-    frmData.append('file',input.files[0]);
-    // frmData.append('emailUsr',document.getElementById('email').innerText);
-    fetch('/dashboard/images', {
-        method: 'PUT',
-        body: frmData,
-        headers: {
-            enctype:'multipart/form-data'
-        }
-    }).then(res => {
-        return res.json();
-    })
-    .then(data => {
-        if(data.ok){
-            let per = document.getElementsByName('profileImage');
-            per.src = image.src;
-        }
-    })
+    
+    
 
 }
 
-var el = document.getElementById('imageUpload1');
-var el2 = document.getElementById('imageUpload2');
-var el3 = document.getElementById('imageUpload3');
-var el4 = document.getElementById('imageUpload4');
-var el5 = document.getElementById('imageUpload5');
+// var el = document.getElementById('imageUpload1');
+// var el2 = document.getElementById('imageUpload2');
+// var el3 = document.getElementById('imageUpload3');
+// var el4 = document.getElementById('imageUpload4');
+// var el5 = document.getElementById('imageUpload5');
 
 
-delegate(document,'change','#imageUpload1',()=>{
-    readURL(el,'imagePreview1');    
-});
-delegate(document,'change','#imageUpload2',()=>{
-    readURL(el2,'imagePreview2');    
-});
-delegate(document,'change','#imageUpload3',()=>{
-    readURL(el3,'imagePreview3');    
-});
-delegate(document,'change','#imageUpload4',()=>{
-    readURL(el4,'imagePreview4');    
-});
-delegate(document,'change','#imageUpload5',()=>{
-    readURL(el5,'imagePreview5');    
-});
+// delegate(document,'change','#imageUpload1',()=>{
+//     readURL(el,'imagePreview1');    
+// });
+// delegate(document,'change','#imageUpload2',()=>{
+//     readURL(el2,'imagePreview2');    
+// });
+// delegate(document,'change','#imageUpload3',()=>{
+//     readURL(el3,'imagePreview3');    
+// });
+// delegate(document,'change','#imageUpload4',()=>{
+//     readURL(el4,'imagePreview4');    
+// });
+// delegate(document,'change','#imageUpload5',()=>{
+//     readURL(el5,'imagePreview5');    
+// });
 
+var elements= document.querySelectorAll('div[class$=gal-item]');
+
+elements.forEach((el)=>{
+        var elId= el.firstChild.childNodes[0].firstChild.firstChild.id
+        var elementWithId = document.getElementById(elId);
+ 
+    delegate(document,'change','#'+elId,
+        ()=>{
+            readURL(elementWithId,
+                el.firstChild.childNodes[0].childNodes[1].firstChild.firstChild.id,
+                el.firstChild.childNodes[0].childNodes[1].firstChild.firstChild.src);    
+    });
+});
 //Stack Overflow solution
 function delegate(el, evt, sel, handler) {
     el.addEventListener(evt, function(event) {
@@ -109,6 +112,8 @@ function delegate(el, evt, sel, handler) {
         }
     });
 }
+
+
 
 function fadeIn(el, time) {
     el.style.opacity = 0;

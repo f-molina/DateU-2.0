@@ -12,12 +12,8 @@ var userSchema = new mongoose.Schema({
     hobbies: String,
     marital: String,
     profileImage: String,
-    image1:String,
-    image2:String,
-    image3:String,
-    image4:String,
-    image5:String,
-    image6:String 
+    photos : [String]
+
 }); 
 
 //userSchema.plugin(uniqueValidator);

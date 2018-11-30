@@ -97,15 +97,15 @@ html(lang='en')
           .row
             .col-md-3
               .mainb
-                img.rounded-circle.img-fluid(src='images/icon.png ', alt='Profile pic', id='profileImage')
+                img.rounded-circle.img-fluid(src=current.profileImage, alt='Profile pic', id='profileImage')
+
             .col-md-7.prof-info
               .pname.text-white
-                h6(name='UserName' id='UserName') #{user.profile.firstName} 
-                  span(id='UserLastName') #{user.profile.lastName}
-                h6(id='UserAge') #{user.profile.edad} años
-                h6(id='UserMarital') Single
-                h6(id='UserCareer') #{user.profile.carrera}
-                h6(id='email') #{user.profile.email}
+                h6(name='UserName' id='UserName') #{current.name}
+                  span(id='UserLastName') #{current.lastname}
+                h6(id='UserAge') #{current.age} años
+                h6(id='UserCareer') #{current.career}
+                h6(id='email') #{current.email}
       .container
         ul.filter.controls
           li(onclick='slider2()') Pictures
@@ -119,7 +119,7 @@ html(lang='en')
                 .row
                   .col-12.col-lg-8.col-md-6
                     h3.display-4.mb-0.text-truncated.mb-3 Biografia
-                    p(id='biog') #{user.profile.biografia}
+                    p(id='biog') #{current.description}
                   .col-12.mt-5
                     h3.display-4.mb-0.text-truncated.mb-3 Intereses
                     p(id='hobs') #{user.profile.intereses}
@@ -138,64 +138,22 @@ html(lang='en')
                       img.mx-auto.rounded-circle.img-fluid(src='images/w7.jpg', alt='')
                         
       #gallery.container.gallery.mt-5
+        -var conter = 1;
         .row
-          .col-sm-12.col-md-4.gal-item
-            .box
-                .avatar-upload
-                  .avatar-edit
-                    input#imageUpload1(type='file', accept='.png, .jpg, .jpeg')
-                    label(for='imageUpload1')
-                  .avatar-preview
-                    a.lightbox(href='images/w7.jpg')
-                      img#imagePreview1(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414112/bb6sgtkeedvgkrmfta3x.jpg')
-          .col-sm-6.col-md-4.gal-item
-            .box
-                .avatar-upload
-                  .avatar-edit
-                    input#imageUpload2(type='file', accept='.png, .jpg, .jpeg')
-                    label(for='imageUpload2')
-                  .avatar-preview
-                    a.lightbox(href='images/w2.jpg')
-                      img#imagePreview2(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414103/j718wga5dtkrcaolndqa.jpg' name='imagePreview2')
-          .col-sm-6.col-md-4.gal-item
-            .box
-                .avatar-upload
-                  .avatar-edit
-                    input#imageUpload3(type='file', accept='.png, .jpg, .jpeg')
-                    label(for='imageUpload3')
-                  .avatar-preview
-                    a.lightbox(href='images/w3.jpg')
-                      img#imagePreview3(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414100/hhxtwpqssz30sw1lb1ur.jpg')
-          .col-sm-6.col-md-4.gal-item
-            .box
-                .avatar-upload
-                  .avatar-edit
-                    input#imageUpload4(type='file', accept='.png, .jpg, .jpeg')
-                    label(for='imageUpload4')
-                  .avatar-preview
-                    a.lightbox(href='images/benches.jpg')
-                      img#imagePreview4(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414092/ijh0etajxjdpfxkh8zj9.jpg')
-          .col-sm-6.col-md-4.gal-item
-            .box
-                .avatar-upload
-                  .avatar-edit
-                    input#imageUpload5(type='file', accept='.png, .jpg, .jpeg')
-                    label(for='imageUpload5')
-                  .avatar-preview
-                    a.lightbox(href='images/park.jpg')
-                      img#imagePreview5(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414082/lpxwmpbz6qmpog8gsngc.jpg')
-          .col-sm-6.col-md-4.gal-item
-            .box
-                .avatar-upload
-                  .avatar-edit
-                    input#imageUpload6(type='file', accept='.png, .jpg, .jpeg')
-                    label(for='imageUpload6')
-                  .avatar-preview
-                    a.lightbox(href='images/park.jpg')
-                      img#imagePreview6(src='https://res.cloudinary.com/dipz4up0t/image/upload/v1543414057/ho7sov8lc4vmdid3gwjf.jpg')   
-      button.btn.pmd-btn-fab.pmd-btn-raised.pmd-ripple-effect.btn-default(type='button')
-        a(href='/chat')
-          i.fas.fa-comment-alt              
+          each img in current.photos
+            .col-sm-12.col-md-4.gal-item
+              .box
+                  .avatar-upload
+                    .avatar-edit
+                      input(id = 'imageUpload'+conter, type='file', accept='.png, .jpg, .jpeg')
+                      label(for='imageUpload'+conter)
+                    .avatar-preview
+                      a.lightbox(href=img)
+                        img(id = 'imagePreview'+conter,src=img)
+                        -conter++;
+        button.btn.pmd-btn-fab.pmd-btn-raised.pmd-ripple-effect.btn-default(type='button')
+          a(href='/chat')
+            i.fas.fa-comment-alt              
           
     
     

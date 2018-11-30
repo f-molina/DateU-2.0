@@ -20,13 +20,15 @@ userController.create = function(user){
         description: 'Student',
         hobbies: 'Study',
         marital: 'Single',
-        profileImage: 'images/w7.jpg',
-        image1:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414112/bb6sgtkeedvgkrmfta3x.jpg',
-        image2:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414103/j718wga5dtkrcaolndqa.jpg',
-        image3:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414100/hhxtwpqssz30sw1lb1ur.jpg',
-        image4:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414092/ijh0etajxjdpfxkh8zj9.jpg',
-        image5:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414082/lpxwmpbz6qmpog8gsngc.jpg',
-        image6:'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414057/ho7sov8lc4vmdid3gwjf.jpg'
+        profileImage: 'images/icon.png',
+        photos:[
+            'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414112/bb6sgtkeedvgkrmfta3x.jpg',
+            'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414103/j718wga5dtkrcaolndqa.jpg',
+            'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414100/hhxtwpqssz30sw1lb1ur.jpg',
+            'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414092/ijh0etajxjdpfxkh8zj9.jpg',
+            'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414082/lpxwmpbz6qmpog8gsngc.jpg',
+            'https://res.cloudinary.com/dipz4up0t/image/upload/v1543414057/ho7sov8lc4vmdid3gwjf.jpg'
+        ]
     }
 
     if(data.email!='' && data.name!='' && data.age!='' && data.career!=''){
@@ -56,36 +58,29 @@ userController.getOne = async(email)=>{
 }
 
 userController.updateImages = function(req,res){
-    console.log(req.files);
+    // console.log(req.files);
     let update = {
         profileImage: req.files[0].path  
     };
-    console.log(update.profileImage);
+    // console.log(update.profileImage);
     cloudinary.uploader.upload(req.files[0].path, 
-        function (result) {
-            update.profileImage = result.url;
-            console.log(req.user.profile.email);
-            userSchema.findOneAndUpdate({email: req.user.profile.email}, update, function(err,old){
-                if(err){
-                    console.log('Error al actualizar');
-                    res.status(500);
-                    res.json({
-                        ok: false,
-                        err
-                    })
-                } else{
-                    console.log(old);
-                    res.json({
-                        ok: true,
-                        old, 
-                        update
-                    });
-                }
-            });
+        async function (result) {
+            
+            
+            const rs = await userSchema.findOneAndUpdate(
+                {photos:req.body.oldUrl},
+                {$set:{"photos.$":result.url}},
+                {new:true}
+            );
+            // console.log(rs);
+
         },
         {
-            transformation: [{ width: 400, height: 400 }
-    ]});
+            transformation: [
+                { width: 400, height: 400 },
+                {quality:"auto:low"}
+            ]
+        });
     fs.unlink(update.profileImage);
 
 }

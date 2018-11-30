@@ -8,10 +8,11 @@ router.get("/", async (req, res) => {
   const user = await getOne(req.user.profile.email);
   
   userSchema.find({}, function(err, usuarios){
-    if(err){console.log(err);}
-    res.render("dashboard", {users: usuarios});
+    // console.log('usuarios:');
+    
+    // console.log(user);
+    res.render("dashboard", {users: usuarios,current:user});
   });
-
 });
 
 
