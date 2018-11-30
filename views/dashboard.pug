@@ -103,7 +103,7 @@ html(lang='en')
                      input#profileUpload(type='file', accept='.png, .jpg, .jpeg')
                      label(for='profileUpload')
                    .avatar-preview
-                    #profilePreview(style='background-image: url(http://i.pravatar.cc/500?img=7);')
+                    #profilePreview(style='background-image: url('+current.profileImage+');')
             .col-md-7.prof-info
               .pname.text-white
                 h6(name='UserName' id='UserName') #{current.name}

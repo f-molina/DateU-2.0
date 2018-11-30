@@ -56,6 +56,28 @@ userController.getOne = async(email)=>{
     const result = await userSchema.findOne({email:email});
     return result;
 }
+userController.updateProfileImage = async function(req,res){
+
+    cloudinary.uploader.upload(req.files[0].path, 
+        async function (result) {
+            
+            const rs = await userSchema.findOneAndUpdate(
+                {email:req.user.profile.email},
+                {profileImage:result.url},
+                {new:true}
+            );
+            console.log(rs);
+
+        },
+        {
+            transformation: [
+                { width: 400, height: 400 },
+                {quality:"auto:low"}
+            ]
+        }
+    );
+   
+}
 
 userController.updateImages = function(req,res){
     // console.log(req.files);

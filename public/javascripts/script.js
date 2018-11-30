@@ -50,6 +50,17 @@ function readURL(input,imgPrev,oldUrl) {
 
             }
             reader.readAsDataURL(input.files[0]);
+            frmData = new FormData();
+            frmData.append('file',input.files[0]);
+            fetch('/dashboard/profileImage', {
+                method: 'PUT',
+                body: frmData,
+                headers: {
+                    enctype:'multipart/form-data'
+                }
+            }).then(res => {
+                
+            })
 
         }
         else{

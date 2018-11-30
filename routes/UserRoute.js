@@ -11,7 +11,9 @@ router.use(express.static('../public'));
 router.get('/users',UserController.get);
 
 //Update
+router.put('/profileImage', upload.any(), UserController.updateProfileImage);
 router.put('/images', upload.any(), UserController.updateImages);
+
 
 router.post('/updateInfo', UserController.updateInfo);
 
