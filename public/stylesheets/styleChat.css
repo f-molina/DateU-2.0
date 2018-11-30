@@ -466,6 +466,7 @@ section#chatroom {
 section#input_zone {
   height: 7%;
   text-align: center;
+  margin-top: 0.4em;
 }
 
 .vertical-align {
@@ -474,6 +475,9 @@ section#input_zone {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  
+  
+  
 }
 
 input#message {
@@ -531,3 +535,73 @@ padding-top: 3em;
     height: 3em;
   }
 }
+@media screen and (max-width: 992px){
+  #input_zone
+  {
+    display: grid;
+    grid-template-columns: 70% 40%;
+    margin-top: 0.6em;
+    margin-bottom: 0.7em;
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+    
+}
+ 
+  input#message{
+    
+    
+    width: 80%;
+    height: 65%;
+    
+  }
+  button#send_message{
+    width: 70%;
+    height: 70%;
+    margin-left: 4%;
+    
+  }
+  #input_zone .vertical-align{
+    margin-top: 0.6em;
+    margin-bottom: 0.7em;
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+  }
+
+  
+}
+
+@media screen and (max-width: 992px){
+  #input_zone
+  {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin-top: 0.6em;
+    margin-bottom: 0.7em;
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+    
+}
+ 
+  input#message{
+    
+    
+    width: 80%;
+    height: 65%;
+    
+  }
+  button#send_message{
+    width: 80%;
+    height: 70%;
+    margin-left: 4%;
+    
+  }
+  #input_zone .vertical-align{
+    margin-top: 0.6em;
+    margin-bottom: 0.7em;
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+  }
+
+  
+}
+
