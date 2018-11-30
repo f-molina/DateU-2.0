@@ -23,6 +23,7 @@ function slider2() {
 function readURL(input,imgPrev,oldUrl) {
     
     if (input.files && input.files[0]) {
+       
         var img = new Image();
 
         img.src = window.URL.createObjectURL( input.files[0] );
@@ -35,34 +36,57 @@ function readURL(input,imgPrev,oldUrl) {
           console.log ("Image Height: " +height);
         };
         var reader = new FileReader();
-        reader.onload = function(e) {
-            let im = document.getElementById(imgPrev);
-            im.src = e.target.result;
-            link = e.target.result;
-            var elemento = document.getElementById(`${imgPrev}`);
 
-            fadeIn(elemento,650);
+        if(imgPrev === 'profilePreview'){
+            reader.onload = function(e) {
+                $('#profilePreview').css('background-image', 'url('+e.target.result +')');
+                $('#profilePreview').hide();
+                $('#profilePreview').fadeIn(650);
+                // im.src = e.target.result;
+                // link = e.target.result;
+                // var elemento = document.getElementById(`${imgPrev}`);
+                // console.log(img);
+                // fadeIn(elemento,650);
+
+            }
+            reader.readAsDataURL(input.files[0]);
 
         }
-        reader.readAsDataURL(input.files[0]);
-        frmData = new FormData();
-        frmData.append('file',input.files[0]);
-        frmData.append('oldUrl',oldUrl);
-        // frmData.append('emailUsr',document.getElementById('email').innerText);
-        fetch('/dashboard/images', {
-            method: 'PUT',
-            body: frmData,
-            headers: {
-                enctype:'multipart/form-data'
+        else{
+            reader.onload = function(e) {
+                let im = document.getElementById(imgPrev);
+                im.src = e.target.result;
+                link = e.target.result;
+                var elemento = document.getElementById(`${imgPrev}`);
+    
+                fadeIn(elemento,650);
+    
             }
-        }).then(res => {
-            
-        })
+            reader.readAsDataURL(input.files[0]);
+            frmData = new FormData();
+            frmData.append('file',input.files[0]);
+            frmData.append('oldUrl',oldUrl);
+            // frmData.append('emailUsr',document.getElementById('email').innerText);
+            fetch('/dashboard/images', {
+                method: 'PUT',
+                body: frmData,
+                headers: {
+                    enctype:'multipart/form-data'
+                }
+            }).then(res => {
+                
+            })
+        }
+        
     }
     
     
 
 }
+
+$('#profileUpload').change(function(){
+    readURL(this,'profilePreview');
+});
 
 // var el = document.getElementById('imageUpload1');
 // var el2 = document.getElementById('imageUpload2');

@@ -96,10 +96,14 @@ html(lang='en')
       .wrapper-header.mask.rgba-gradient
         header.container.headerb
           .row
-            .col-md-3
-              .mainb
-                img.rounded-circle.img-fluid(src=current.profileImage, alt='Profile pic', id='profileImage')
-
+            .col-md-4
+              .box
+                 .avatar-upload
+                   .avatar-edit
+                     input#profileUpload(type='file', accept='.png, .jpg, .jpeg')
+                     label(for='profileUpload')
+                   .avatar-preview
+                    #profilePreview(style='background-image: url(http://i.pravatar.cc/500?img=7);')
             .col-md-7.prof-info
               .pname.text-white
                 h6(name='UserName' id='UserName') #{current.name}
