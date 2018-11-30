@@ -5,8 +5,7 @@ const path = require("path");
 const session = require("express-session");
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
-//const io = require("socket.io").listen(Server);
-mongoose.connect("mongodb://localhost/web", {useNewUrlParser: true});
+mongoose.connect("mongodb://hola:hola123@ds161901.mlab.com:61901/web", {useNewUrlParser: true});
 
 const auth = require("./auth");
 const middleware = require("./middleware");
