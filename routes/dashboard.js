@@ -7,7 +7,7 @@ const userSchema = require('../models/users');
 router.get("/", async (req, res) => {
   const user = await getOne(req.user.profile.email);
   
-  userSchema.find({}, function(err, usuarios){
+  userSchema.find({ email: {$ne: req.user.profile.email}}, function(err, usuarios){
     // console.log('usuarios:');
     
     // console.log(user);
