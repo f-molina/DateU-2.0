@@ -11,6 +11,8 @@ html(lang='en')
     // Material Design Bootstrap
     link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css', rel='stylesheet')
     link(rel='stylesheet', href='/stylesheets/style3.css')
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
     link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin='anonymous')
     // bag-gallery css
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css')
@@ -80,7 +82,7 @@ html(lang='en')
         button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
           i.fas.fa-align-justify
         #navbarSupportedContent.collapse.navbar-collapse
-          h6.text-white DateU
+          h6.text-white.lyric DateU
           ul.nav.navbar-nav.ml-auto
             li.nav-item.active
               a.nav-link(href='/') Home
@@ -123,10 +125,10 @@ html(lang='en')
               .card-body
                 .row
                   .col-12.col-lg-8.col-md-6
-                    h3.display-4.mb-0.text-truncated.mb-3 Biografia
+                    h3.display-4.mb-0.text-truncated.mb-3.miletra Biografia
                     p(id='biog') #{current.description}
                   .col-12.mt-5
-                    h3.display-4.mb-0.text-truncated.mb-3 Intereses
+                    h3.display-4.mb-0.text-truncated.mb-3.miletra Intereses
                     p(id='hobs') #{current.hobbies}
                 // /row
                 // /card-block
@@ -175,5 +177,17 @@ html(lang='en')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js')
     script(src='/javascripts/script.js')
     script(src='/javascripts/updateInfo.js')
+    script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
+    
+    script.
+      $('#submit').click(function(){
+      swal({
+        title: "Cambios registrados",
+        icon: "success",
+        button: "Ok",
+          });
+      });
+
+</script>
     script.
       baguetteBox.run('.gallery');

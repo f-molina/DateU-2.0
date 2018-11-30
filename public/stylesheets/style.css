@@ -2,6 +2,11 @@ body{
     background: linear-gradient(to left, #7b4397, #dc2430);
     margin: 0;
   }
+
+  .my-bg
+{
+    background-color: #ff6b6b;
+}
   
   header.main {
     position: relative;

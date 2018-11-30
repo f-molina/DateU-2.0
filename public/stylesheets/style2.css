@@ -1,3 +1,32 @@
+.lyric
+{
+  font-family: 'Fjalla One', sans-serif;
+  color: white;
+  font-size: 2em;
+}
+
+.register
+{
+    color: black;
+}
+
+.my-bg
+{
+    background-color: #ff6b6b;
+}
+
+.register:hover
+{
+    background-color: white;
+    color: darkblue;
+    transition: 1s;
+}
+
+.lyric2  
+{
+    font-family: 'Fjalla One', sans-serif;
+    color: black;
+}
 .carousel-inner > .item{
     height: 100vh;
 }
@@ -26,22 +55,33 @@
     padding-right: 2em;
     color: white;
 }
+.he4{
+    font-size: 2.5em;
+    padding-top: 7.5em;
+    padding-left: -2em;
+    color: white;
+}
 
 .he2{
     font-size: 3em;
     padding-top: 3em;
-    color: white;
+    
 }
 
 .he3{
     font-size: 3em;
     padding-top: 5em;
-    padding-left: 3em;
-    color: white;
+    padding-left: 2.5em;
+    
 }
 
 i{
     font-size: 5em;
+}
+
+.myw
+{
+    color:white;
 }
 
 .sec1{
@@ -64,10 +104,32 @@ i{
     transform: translateY(0)
 }
 
+.box2
+{
+    padding: 3.125em 1.875em;
+    text-align: center;
+    -webkit-box-shadow: 0 0 0 0 #ff6b6b;
+    box-shadow: 0 0 0 0 #ff6b6b;
+    color: white;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 5px;
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+}
+
 .box:hover{
     -webkit-box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px -5px rgba(3, 3, 3, 0.699);
     background-color: #ffffff;
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px)
+}
+
+.box2:hover{
+    -webkit-box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px -5px rgba(3, 3, 3, 0.699);
+    background-color: #ff6b6b;
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px)
 }
@@ -121,8 +183,5 @@ i{
     font-size: 3rem;
     font-weight: 300;
     line-height: 1.0;
-    }
-    .mbut{
-        font-size: 1em;
     }
 }

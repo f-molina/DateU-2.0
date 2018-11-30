@@ -195,3 +195,20 @@ div#profpic {
 .text-sug{
     font-size: 2em;
 }
+
+.h3
+{
+    font-family: 'Raleway', sans-serif;
+}
+
+h6
+{
+    font-family: 'Oswald', sans-serif;
+}
+
+.lyric
+{
+  font-family: 'Fjalla One', sans-serif;
+  color: white;
+  font-size: 2em;
+}
