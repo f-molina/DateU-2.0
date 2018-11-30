@@ -34,9 +34,16 @@ submit.addEventListener('click', ()=>{
             'Content-Type': 'application/json'
         }
     }).then(res => {
+        console.log(`RES: `);
         console.log(res);
+        
     })
-    .then(data => {
-        {console.log(data);}
+    .then(datos => {
+        console.log(data);
+        document.getElementById('UserMarital').innerText = data.marital;
+        document.getElementById('UserAge').innerText = data.age;
+        document.getElementById('UserCareer').innerText = data.career;
+        document.getElementById('biog').innerText = data.description;
+        document.getElementById('hobs').innerText = data.hobbies;
     })
 });
