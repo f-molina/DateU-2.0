@@ -514,7 +514,13 @@ background:#e0e0de;
 #feedback{
 padding-top: 3em;
 }
-
+@media screen and (max-width: 992px) {
+    #feedback {
+      margin-bottom:29px;
+    }
+  
+}
+/*
 @media screen and (max-width: 992px) {
   .navbar {
     text-align: center;
@@ -524,8 +530,8 @@ padding-top: 3em;
       padding: 1em;
   }
   
-}
-
+}*/
+/*
 @media screen and (max-width: 992px){
   .navbar {
     width: 100%;
@@ -534,7 +540,7 @@ padding-top: 3em;
   .btn{
     height: 3em;
   }
-}
+}*/
 @media screen and (max-width: 992px){
   #input_zone
   {
