@@ -96,14 +96,13 @@ html(lang='en')
       .wrapper-header.mask.rgba-gradient
         header.container.headerb
           .row
-            .col-md-4
-              .box
+            .col-md-4.profresp
                  .avatar-upload
-                   .avatar-edit
+                   .avatar-edit#editresp
                      input#profileUpload(type='file', accept='.png, .jpg, .jpeg')
                      label(for='profileUpload')
-                   .avatar-preview
-                    #profilePreview(style='background-image: url('+current.profileImage+');')
+                   .avatar-preview#profpic
+                    #profilePreview.rounded-circle(style='background-image: url('+current.profileImage+');')
             .col-md-7.prof-info
               .pname.text-white
                 h6(name='UserName' id='UserName') #{current.name}
@@ -147,7 +146,7 @@ html(lang='en')
         -var conter = 1;
         .row
           each img in current.photos
-            .col-sm-12.col-md-4.gal-item
+            .col-sm-12.col-md-6.col-lg-4.gal-item
               .box
                   .avatar-upload
                     .avatar-edit
