@@ -90,7 +90,7 @@ userController.updateImages = function(req,res){
             
             
             const rs = await userSchema.findOneAndUpdate(
-                {photos:req.body.oldUrl},
+                {email:req.user.profile.email,photos:req.body.oldUrl},
                 {$set:{"photos.$":result.url}},
                 {new:true}
             );
