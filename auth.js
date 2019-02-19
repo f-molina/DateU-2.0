@@ -5,7 +5,7 @@ const ExpressOIDC = require("@okta/oidc-middleware").ExpressOIDC;
 // Define an Okta client so any user management tasks can be performed
 const oktaClient = new okta.Client({
   orgUrl: 'https://dev-269919.oktapreview.com',
-  token: '00LVFEmA-rxEQKjPWU25DGKKd_NiwJaFh0FbK2ZWio'
+  token: '00zBrMdT6Cc-Qvpa_WGz2VhWy_jo_7J_DR0kmbGsce'
 });
 
 // Define the OpenID Connect client
